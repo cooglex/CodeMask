@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Panels\StackPanelWithSpacing.cs" />
     <Compile Include="Panels\UniformGridWithSpacing.cs" />
+    <Compile Include="Panels\UniformWrapPanel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
