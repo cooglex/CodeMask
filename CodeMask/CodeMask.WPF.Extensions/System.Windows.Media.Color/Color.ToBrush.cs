@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media;
 
-namespace CodeMask.Windows.Extensions
+namespace CodeMask.WPF.Extensions
 {
     /// <summary>
     ///     Color扩展方法类

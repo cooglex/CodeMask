@@ -2,7 +2,7 @@
 using System.Windows.Markup;
 using System.Windows.Media;
 
-namespace CodeMask.Windows.Extensions.MarkupExtensions
+namespace CodeMask.WPF.Extensions.MarkupExtensions
 {
     /// <summary>
     ///     ImageSource 标记扩展类。

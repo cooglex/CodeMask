@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 
-namespace CodeMask.Windows.Extensions
+namespace CodeMask.WPF.Extensions
 {
     /// <summary>
     ///     DependencyObject扩展方法类。
