@@ -16,7 +16,7 @@ namespace CodeMask.Windows.Design
         /// <summary>
         ///     访问锁。
         /// </summary>
-        private static readonly object syslock = new object();
+        private static readonly object Syslock = new object();
 
         /// <summary>
         ///     获取相应类型的实例对象。
@@ -28,7 +28,7 @@ namespace CodeMask.Windows.Design
             {
                 if (_instance == null)
                 {
-                    lock (syslock)
+                    lock (Syslock)
                     {
                         if (_instance == null)
                         {
