@@ -53,6 +53,9 @@
     <Compile Include="System.Windows.DependencyObject\DependencyObject.FindParent.cs" />
     <Compile Include="System.Windows.Media.Color\Color.ToBrush.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="System.Collections.Generic.IEnumerable[T]\IEnumerable.ToObservableCollection.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
