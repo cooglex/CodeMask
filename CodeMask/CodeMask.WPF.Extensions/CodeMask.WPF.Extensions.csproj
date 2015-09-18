@@ -49,8 +49,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MarkupExtensions\ImageBrushExtension.cs" />
-    <Compile Include="MarkupExtensions\ImageSourceExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
