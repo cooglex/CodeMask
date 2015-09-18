@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -50,17 +51,93 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Progress\LoadingIndicator\Styles\Apple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\Arcs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\ArcsRing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\Cogs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\DotCircle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\DoubleBounce.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\FlipPlane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\Style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\Pulse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\Ring.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\Swirl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\ThreeDots.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\LoadingIndicator\Styles\Wave.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gif\AnimationCache.cs" />
+    <Compile Include="Gif\Decoding\GifApplicationExtension.cs" />
+    <Compile Include="Gif\Decoding\GifBlock.cs" />
+    <Compile Include="Gif\Decoding\GifBlockKind.cs" />
+    <Compile Include="Gif\Decoding\GifColor.cs" />
+    <Compile Include="Gif\Decoding\GifCommentExtension.cs" />
+    <Compile Include="Gif\Decoding\GifDecoderException.cs" />
+    <Compile Include="Gif\Decoding\GifExtension.cs" />
+    <Compile Include="Gif\Decoding\GifFile.cs" />
+    <Compile Include="Gif\Decoding\GifFrame.cs" />
+    <Compile Include="Gif\Decoding\GifGraphicControlExtension.cs" />
+    <Compile Include="Gif\Decoding\GifHeader.cs" />
+    <Compile Include="Gif\Decoding\GifHelpers.cs" />
+    <Compile Include="Gif\Decoding\GifImageData.cs" />
+    <Compile Include="Gif\Decoding\GifImageDescriptor.cs" />
+    <Compile Include="Gif\Decoding\GifLogicalScreenDescriptor.cs" />
+    <Compile Include="Gif\Decoding\GifPlainTextExtension.cs" />
+    <Compile Include="Gif\Decoding\GifTrailer.cs" />
+    <Compile Include="Gif\ImageAnimationController.cs" />
+    <Compile Include="Gif\ImageBehavior.cs" />
     <Compile Include="ImageStrip.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Panels\AutoGrid.cs" />
     <Compile Include="Panels\StackPanelWithSpacing.cs" />
     <Compile Include="Panels\StretchWrapPanel.cs" />
     <Compile Include="Panels\UniformGridWithSpacing.cs" />
     <Compile Include="Panels\UniformWrapPanel.cs" />
+    <Compile Include="Primitives\NotifyIcon.cs" />
+    <Compile Include="Progress\LoadingIndicator\LoadingIndicator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -84,6 +161,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

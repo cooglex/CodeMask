@@ -2,7 +2,7 @@
 using System.Windows.Markup;
 using System.Windows.Media;
 
-namespace CodeMask.WPF.Extensions.MarkupExtensions
+namespace CodeMask.WPF.MarkupExtensions
 {
     /// <summary>
     ///     ImageBrush标记扩展。
