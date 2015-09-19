@@ -51,12 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\SimpleCommand.cs" />
-    <Compile Include="Extensions\System.Windows.Media.Color\Color.WpfToGdi.cs" />
-    <Compile Include="Extensions\System.Windows.Media.Color\Color.GdiToWpf.cs" />
-    <Compile Include="Extensions\System.Windows.Media.Color\Color.Invert.cs" />
-    <Compile Include="Extensions\System.Windows.Window\Window.GetHwndSource.cs" />
-    <Compile Include="Extensions\System.Windows.Window\Window.RegisterHook.cs" />
-    <Compile Include="Extensions\System.Windows.Window\Window.GetHandle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
