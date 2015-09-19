@@ -65,6 +65,9 @@
     <Compile Include="System.Windows.DependencyObject\DependencyObject.FindParent.cs" />
     <Compile Include="System.Windows.DependencyObject\DependencyObject.GetAncestors.cs" />
     <Compile Include="System.Windows.Media.Color\Color.ToBrush.cs" />
+    <Compile Include="System.Windows.Media.Media3D.Point3D\Point3D.ToVector3D.cs" />
+    <Compile Include="System.Windows.Media.Media3D.Vector3D\Vector3D.FindAnyPerpendicular.cs" />
+    <Compile Include="System.Windows.Media.Media3D.Vector3D\Vector3D.ToPoint3D.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
