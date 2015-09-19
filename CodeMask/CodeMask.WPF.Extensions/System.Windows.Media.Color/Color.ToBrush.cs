@@ -5,7 +5,7 @@ namespace CodeMask.WPF.Extensions
     /// <summary>
     ///     Color扩展方法类
     /// </summary>
-    public static class ColorExtensions
+    public static partial class ColorExtensions
     {
         /// <summary>
         /// </summary>

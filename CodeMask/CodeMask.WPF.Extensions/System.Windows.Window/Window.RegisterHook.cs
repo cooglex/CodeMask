@@ -3,13 +3,16 @@ using System.Windows.Interop;
 
 namespace CodeMask.WPF.Extensions
 {
+    /// <summary>
+    ///     <see cref="System.Windows.Window" />扩展。
+    /// </summary>
     public static partial class WindowExtensions
     {
         /// <summary>
         ///     给指定WPF窗体添加消息钩子。
         /// </summary>
-        /// <param name="this">窗体实例。</param>
-        /// <param name="hook"><code>HwndSourceHook</code> 实例。</param>
+        /// <param name="this">WPF窗体实例。</param>
+        /// <param name="hook"><see cref="System.Windows.Interop.HwndSourceHook" /> 实例。</param>
         /// <example>
         ///     <code>
         ///          <![CDATA[

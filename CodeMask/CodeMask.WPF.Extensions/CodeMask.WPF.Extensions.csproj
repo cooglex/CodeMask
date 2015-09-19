@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -64,10 +65,16 @@
     </Compile>
     <Compile Include="System.Windows.DependencyObject\DependencyObject.FindParent.cs" />
     <Compile Include="System.Windows.DependencyObject\DependencyObject.GetAncestors.cs" />
+    <Compile Include="System.Windows.Media.Color\Color.GdiToWpf.cs" />
+    <Compile Include="System.Windows.Media.Color\Color.Invert.cs" />
     <Compile Include="System.Windows.Media.Color\Color.ToBrush.cs" />
+    <Compile Include="System.Windows.Media.Color\Color.WpfToGdi.cs" />
     <Compile Include="System.Windows.Media.Media3D.Point3D\Point3D.ToVector3D.cs" />
     <Compile Include="System.Windows.Media.Media3D.Vector3D\Vector3D.FindAnyPerpendicular.cs" />
     <Compile Include="System.Windows.Media.Media3D.Vector3D\Vector3D.ToPoint3D.cs" />
+    <Compile Include="System.Windows.Window\Window.GetHandle.cs" />
+    <Compile Include="System.Windows.Window\Window.GetHwndSource.cs" />
+    <Compile Include="System.Windows.Window\Window.RegisterHook.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
