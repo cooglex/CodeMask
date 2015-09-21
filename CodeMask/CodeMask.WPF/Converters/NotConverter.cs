@@ -5,12 +5,10 @@ using System.Windows.Data;
 namespace CodeMask.WPF.Converters
 {
     /// <summary>
-    ///     大写转换器。
+    ///     取反转换器。
     /// </summary>
-    public sealed class UpperConverter : CoreConverter<UpperConverter>, IValueConverter
+    public sealed class NotConverter : CoreConverter<NotConverter>, IValueConverter
     {
-        #region IValueConverter Members
-
         /// <summary>
         ///     转换值。
         /// </summary>
@@ -21,9 +19,7 @@ namespace CodeMask.WPF.Converters
         /// <returns>转换后的值。如果该方法返回 null，则使用有效的 null 值。</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value != null)
-                return value.ToString().ToUpper();
-            return value;
+            return !(bool) value;
         }
 
         /// <summary>
@@ -34,12 +30,9 @@ namespace CodeMask.WPF.Converters
         /// <param name="parameter">要使用的转换器参数。</param>
         /// <param name="culture">要用在转换器中的区域性。</param>
         /// <returns>转换后的值。如果该方法返回 null，则使用有效的 null 值。</returns>
-        /// <exception cref="System.NotImplementedException"></exception>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
-
-        #endregion
     }
 }

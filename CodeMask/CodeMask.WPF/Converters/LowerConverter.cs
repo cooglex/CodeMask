@@ -7,7 +7,7 @@ namespace CodeMask.WPF.Converters
     /// <summary>
     ///     小写转换器。
     /// </summary>
-    public class LowerConverter : CoreConverter<LowerConverter>, IValueConverter
+    public sealed class LowerConverter : CoreConverter<LowerConverter>, IValueConverter
     {
         #region IValueConverter Members
 

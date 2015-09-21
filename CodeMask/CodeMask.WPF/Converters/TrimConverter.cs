@@ -7,7 +7,7 @@ namespace CodeMask.WPF.Converters
     /// <summary>
     ///     截取空白字符转换器。
     /// </summary>
-    public class TrimConverter : CoreConverter<TrimConverter>, IValueConverter
+    public sealed class TrimConverter : CoreConverter<TrimConverter>, IValueConverter
     {
         #region IValueConverter Members
 
