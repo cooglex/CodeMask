@@ -55,4 +55,4 @@ using System.Windows.Markup;
 
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: XmlnsDefinition("http://schemas.github.com/cooglex", "CodeMask.WPF.Converters")]
+[assembly: XmlnsDefinition("https://github.com/cooglex/CodeMask", "CodeMask.WPF.Converters")]
