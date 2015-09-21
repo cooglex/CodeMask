@@ -50,6 +50,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Commands\SimpleCommand.cs" />
     <Compile Include="Converters\CoreConverter.cs" />
     <Compile Include="Converters\BooleanToInverseVisibilityConverter.cs" />
