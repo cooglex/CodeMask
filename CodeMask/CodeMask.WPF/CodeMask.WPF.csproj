@@ -54,6 +54,7 @@
     <Compile Include="Commands\SimpleCommand.cs" />
     <Compile Include="Converters\CoreConverter.cs" />
     <Compile Include="Converters\BooleanToInverseVisibilityConverter.cs" />
+    <Compile Include="Converters\IsNullConverter.cs" />
     <Compile Include="Converters\LowerConverter.cs" />
     <Compile Include="Converters\NotConverter.cs" />
     <Compile Include="Converters\TrimConverter.cs" />
