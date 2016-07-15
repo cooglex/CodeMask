@@ -1,0 +1,142 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:attach="clr-namespace:CodeMask.WPF.Controls.Attached"
+                    xmlns:controls="clr-namespace:CodeMask.WPF.Controls.Progress"
+                    xmlns:panels="clr-namespace:CodeMask.WPF.Controls.Panels">
+    <ControlTemplate x:Key="WaveVerticalControlTemplate" TargetType="{x:Type controls:LoadingIndicator}">
+        <Border Name="PART_Border"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="SizeStates">
+                    <VisualState x:Name="Large" />
+                    <VisualState x:Name="Small" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ActiveStates">
+                    <VisualState x:Name="Inactive" />
+                    <VisualState x:Name="Active">
+                        <Storyboard Duration="0:0:1.000"
+                                    RepeatBehavior="Forever"
+                                    SpeedRatio="{TemplateBinding SpeedRatio}">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Rect0" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.100" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.150" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.350" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Rect1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.150" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.200" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.400" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Rect2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.200" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.250" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.450" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Rect3" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.250" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.300" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.500" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Rect4" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.300" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.350" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.550" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <panels:StackPanelWithSpacing Orientation="{Binding Path=(attach:AttachBase.Orientation), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" SpaceBetweenItems="{Binding Path=(attach:AttachBase.ChildSpace), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}">
+                <panels:StackPanelWithSpacing.Resources>
+                    <Style TargetType="Rectangle">
+                        <Setter Property="Width" Value="{Binding Path=(attach:AttachBase.ChildWidth), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" />
+                        <Setter Property="Height" Value="{Binding Path=(attach:AttachBase.ChildHeight), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" />
+                        <Setter Property="Fill" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" />
+                        <Setter Property="VerticalAlignment" Value="Stretch" />
+                        <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform />
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </panels:StackPanelWithSpacing.Resources>
+                <Rectangle x:Name="PART_Rect0" />
+                <Rectangle x:Name="PART_Rect1" />
+                <Rectangle x:Name="PART_Rect2" />
+                <Rectangle x:Name="PART_Rect3" />
+                <Rectangle x:Name="PART_Rect4" />
+            </panels:StackPanelWithSpacing>
+        </Border>
+    </ControlTemplate>
+    <ControlTemplate x:Key="WaveHorizontalControlTemplate" TargetType="{x:Type controls:LoadingIndicator}">
+        <Border Name="PART_Border"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="SizeStates">
+                    <VisualState x:Name="Large" />
+                    <VisualState x:Name="Small" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ActiveStates">
+                    <VisualState x:Name="Inactive" />
+                    <VisualState x:Name="Active">
+                        <Storyboard Duration="0:0:1.000"
+                                    RepeatBehavior="Forever"
+                                    SpeedRatio="{TemplateBinding SpeedRatio}">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Rect0" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.100" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.150" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.350" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Rect1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.150" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.200" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.400" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Rect2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.200" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.250" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.450" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Rect3" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.250" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.300" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.500" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Rect4" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.300" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.350" Value="1.6" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.550" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <panels:StackPanelWithSpacing Orientation="{Binding Path=(attach:AttachBase.Orientation), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" SpaceBetweenItems="{Binding Path=(attach:AttachBase.ChildSpace), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}">
+                <panels:StackPanelWithSpacing.Resources>
+                    <Style TargetType="Rectangle">
+                        <Setter Property="Width" Value="{Binding Path=(attach:AttachBase.ChildWidth), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" />
+                        <Setter Property="Height" Value="{Binding Path=(attach:AttachBase.ChildHeight), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" />
+                        <Setter Property="Fill" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" />
+                        <Setter Property="VerticalAlignment" Value="Stretch" />
+                        <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform />
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </panels:StackPanelWithSpacing.Resources>
+                <Rectangle x:Name="PART_Rect0" />
+                <Rectangle x:Name="PART_Rect1" />
+                <Rectangle x:Name="PART_Rect2" />
+                <Rectangle x:Name="PART_Rect3" />
+                <Rectangle x:Name="PART_Rect4" />
+            </panels:StackPanelWithSpacing>
+        </Border>
+    </ControlTemplate>
+</ResourceDictionary>

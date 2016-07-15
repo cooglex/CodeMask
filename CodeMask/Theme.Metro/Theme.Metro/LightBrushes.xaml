@@ -1,0 +1,418 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  全局颜色  -->
+    <!--  default accent colors and brushes  -->
+    <Color x:Key="AppHighlightedColor">#FF007ACC</Color>
+    <Color x:Key="AppColor">#FF007ACC</Color>
+    <SolidColorBrush x:Key="CurrentBrush" Color="{DynamicResource AppHighlightedColor}" />
+
+    <SolidColorBrush x:Key="BlackBrush" Color="Black" />
+    <SolidColorBrush x:Key="WhiteBrush" Color="White" />
+
+    <SolidColorBrush x:Key="AlertBrush" Color="#FFFF0000" />
+    <!--  Shadow  -->
+    <DropShadowEffect x:Key="StandardDropShadow"
+                      Direction="305"
+                      Opacity="0.6"
+                      ShadowDepth="3" />
+
+    <!--  Window  -->
+    <SolidColorBrush x:Key="Window_BackgroundBrush" Color="#FFEFEFF2" />
+    <SolidColorBrush x:Key="Window_BorderBrush" Color="#FFEFEFF2" />
+    <SolidColorBrush x:Key="Window_ForegroundBrush" Color="#FF1E1E1E" />
+
+    <SolidColorBrush x:Key="WindowTitleColorBrush" Color="#FFEFEFF2" />
+    <SolidColorBrush x:Key="WindowText" Color="#333333" />
+    <SolidColorBrush x:Key="WindowTextReadOnly" Color="#919191" />
+    <Color x:Key="Window_ActiveGlowColor">#FF007ACC</Color>
+    <Color x:Key="Window_InactiveGlowColor">#FF007ACC</Color>
+    <Color x:Key="Window_NonClientFillColor">#FF007ACC</Color>
+
+    <!--  Colors  -->
+    <Color x:Key="CommonBackgroundColor">#ffffff</Color>
+    <Color x:Key="CommonForegroundColor">#FF333333</Color>
+    <Color x:Key="CommonBorderColor">#FFCCCCCC</Color>
+
+    <Color x:Key="CommonBackgroundColor_Hover">#FFDDDDDD</Color>
+    <Color x:Key="CommonForegroundColor_Hover">#FF333333</Color>
+    <Color x:Key="CommonBorderColor_Hover">#FFCCCCCC</Color>
+
+    <Color x:Key="CommonBackgroundColor_Pressed">#FF007ACC</Color>
+    <Color x:Key="CommonForegroundColor_Pressed">#FFFFFFFF</Color>
+    <Color x:Key="CommonBorderColor_Pressed">#FF007ACC</Color>
+
+    <Color x:Key="CommonBackgroundColor_Highlighted">#FF007ACC</Color>
+    <Color x:Key="CommonForegroundColor_Highlighted">#FFFFFFFF</Color>
+    <Color x:Key="CommonBorderColor_Highlighted">#FF007ACC</Color>
+
+    <Color x:Key="CommonBackgroundColor_Checked">#FF007ACC</Color>
+    <Color x:Key="CommonForegroundColor_Checked">#FFFFFFFF</Color>
+    <Color x:Key="CommonBorderColor_Checked">#FF007ACC</Color>
+
+    <Color x:Key="CommonBackgroundColor_Selected">#FF007ACC</Color>
+    <Color x:Key="CommonForegroundColor_Selected">#FFFFFFFF</Color>
+    <Color x:Key="CommonBorderColor_Selected">#FF007ACC</Color>
+
+    <Color x:Key="CommonBackgroundColor_SelectedInactive">#FF007ACC</Color>
+    <Color x:Key="CommonForegroundColor_SelectedInactive">#FFFFFFFF</Color>
+    <Color x:Key="CommonBorderColor_SelectedInactive">#FF007ACC</Color>
+
+    <Color x:Key="CommonBackgroundColor_Focused">#00FFFFFF</Color>
+    <Color x:Key="CommonForegroundColor_Focused">#FFFFFFFF</Color>
+    <Color x:Key="CommonBorderColor_Focused">#FF007ACC</Color>
+
+    <Color x:Key="CommonBackgroundColor_Disabled">#FFD2D1D1</Color>
+    <Color x:Key="CommonForegroundColor_Disabled">#FFA1A1A1</Color>
+    <Color x:Key="CommonBorderColor_Disabled">#FFCCCCCC</Color>
+
+    <!--  InputColors  -->
+    <Color x:Key="InputBackgroundColor">#ffffff</Color>
+    <Color x:Key="InputBackgroundColor_Hover">#ffffff</Color>
+    <Color x:Key="InputBorderColor">#cccccc</Color>
+    <Color x:Key="InputBorderColor_Hover">#cccccc</Color>
+    <Color x:Key="InputTextColor">#333333</Color>
+    <Color x:Key="InputTextColor_Hover">#333333</Color>
+    <Color x:Key="InputTextColor_Disabled">#919191</Color>
+
+    <!--  Input  -->
+    <SolidColorBrush x:Key="InputBackground" Color="{DynamicResource InputBackgroundColor}" />
+    <SolidColorBrush x:Key="InputBackground_Hover" Color="{DynamicResource InputBackgroundColor_Hover}" />
+    <SolidColorBrush x:Key="InputBorder" Color="{DynamicResource InputBorderColor}" />
+    <SolidColorBrush x:Key="InputBorder_Hover" Color="{DynamicResource InputBorderColor_Hover}" />
+    <SolidColorBrush x:Key="InputText" Color="{DynamicResource InputTextColor}" />
+    <SolidColorBrush x:Key="InputText_Hover" Color="{DynamicResource InputTextColor_Hover}" />
+    <SolidColorBrush x:Key="InputText_Disabled" Color="{DynamicResource InputTextColor_Disabled}" />
+
+    <!--  Normal  -->
+    <SolidColorBrush x:Key="CommonBackgroundBrush" Color="{DynamicResource CommonBackgroundColor}" />
+    <SolidColorBrush x:Key="CommonForegroundBrush" Color="{DynamicResource CommonForegroundColor}" />
+    <SolidColorBrush x:Key="CommonBorderBrush" Color="{DynamicResource CommonBorderColor}" />
+    <!--  Hover  -->
+    <SolidColorBrush x:Key="CommonBackgroundBrush_Hover" Color="{DynamicResource CommonBackgroundColor_Hover}" />
+    <SolidColorBrush x:Key="CommonForegroundBrush_Hover" Color="{DynamicResource CommonForegroundColor_Hover}" />
+    <SolidColorBrush x:Key="CommonBorderBrush_Hover" Color="{DynamicResource CommonBorderColor_Hover}" />
+    <!--  Highlighted  -->
+    <SolidColorBrush x:Key="CommonBackgroundBrush_Highlighted" Color="{DynamicResource CommonBackgroundColor_Highlighted}" />
+    <SolidColorBrush x:Key="CommonForegroundBrush_Highlighted" Color="{DynamicResource CommonForegroundColor_Highlighted}" />
+    <SolidColorBrush x:Key="CommonBorderBrush_Highlighted" Color="{DynamicResource CommonBorderColor_Highlighted}" />
+    <!--  Pressed  -->
+    <SolidColorBrush x:Key="CommonBackgroundBrush_Pressed" Color="{DynamicResource CommonBackgroundColor_Pressed}" />
+    <SolidColorBrush x:Key="CommonForegroundBrush_Pressed" Color="{DynamicResource CommonForegroundColor_Pressed}" />
+    <SolidColorBrush x:Key="CommonBorderBrush_Pressed" Color="{DynamicResource CommonBorderColor_Pressed}" />
+    <!--  Checked  -->
+    <SolidColorBrush x:Key="CommonBackgroundBrush_Checked" Color="{DynamicResource CommonBackgroundColor_Checked}" />
+    <SolidColorBrush x:Key="CommonForegroundBrush_Checked" Color="{DynamicResource CommonForegroundColor_Checked}" />
+    <SolidColorBrush x:Key="CommonBorderBrush_Checked" Color="{DynamicResource CommonBorderColor_Checked}" />
+    <!--  Selected  -->
+    <SolidColorBrush x:Key="CommonBackgroundBrush_Selected" Color="{DynamicResource CommonBackgroundColor_Selected}" />
+    <SolidColorBrush x:Key="CommonForegroundBrush_Selected" Color="{DynamicResource CommonForegroundColor_Selected}" />
+    <SolidColorBrush x:Key="CommonBorderBrush_Selected" Color="{DynamicResource CommonBorderColor_Selected}" />
+    <!--  SelectedInactive  -->
+    <SolidColorBrush x:Key="CommonBackgroundBrush_SelectedInactive" Color="{DynamicResource CommonBackgroundColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="CommonForegroundBrush_SelectedInactive" Color="{DynamicResource CommonForegroundColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="CommonBorderBrush_SelectedInactive" Color="{DynamicResource CommonBorderColor_SelectedInactive}" />
+    <!--  Focused  -->
+    <SolidColorBrush x:Key="CommonBackgroundBrush_Focused" Color="{DynamicResource CommonBackgroundColor_Focused}" />
+    <SolidColorBrush x:Key="CommonForegroundBrush_Focused" Color="{DynamicResource CommonForegroundColor_Focused}" />
+    <SolidColorBrush x:Key="CommonBorderBrush_Focused" Color="{DynamicResource CommonBorderColor_Focused}" />
+
+    <!--  Disabled  -->
+    <SolidColorBrush x:Key="CommonBackgroundBrush_Disabled" Color="{DynamicResource CommonBackgroundColor_Disabled}" />
+    <SolidColorBrush x:Key="CommonForegroundBrush_Disabled" Color="{DynamicResource CommonForegroundColor_Disabled}" />
+    <SolidColorBrush x:Key="CommonBorderBrush_Disabled" Color="{DynamicResource CommonBorderColor_Disabled}" />
+
+    <!--  Button Brushes  -->
+    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{DynamicResource CommonBackgroundColor}" />
+    <SolidColorBrush x:Key="ButtonForegroundBrush" Color="{DynamicResource CommonForegroundColor}" />
+    <SolidColorBrush x:Key="ButtonBorderBrush" Color="{DynamicResource CommonBorderColor}" />
+
+    <SolidColorBrush x:Key="ButtonBackgroundBrush_Hover" Color="{DynamicResource CommonBackgroundColor_Hover}" />
+    <SolidColorBrush x:Key="ButtonForegroundBrush_Hover" Color="{DynamicResource CommonForegroundColor_Hover}" />
+    <SolidColorBrush x:Key="ButtonBorderBrush_Hover" Color="{DynamicResource CommonBorderColor_Hover}" />
+
+    <SolidColorBrush x:Key="ButtonBackgroundBrush_Pressed" Color="{DynamicResource CommonBackgroundColor_Pressed}" />
+    <SolidColorBrush x:Key="ButtonForegroundBrush_Pressed" Color="{DynamicResource CommonForegroundColor_Pressed}" />
+    <SolidColorBrush x:Key="ButtonBorderBrush_Pressed" Color="{DynamicResource CommonBorderColor_Pressed}" />
+
+    <SolidColorBrush x:Key="ButtonBackgroundBrush_Disabled" Color="{DynamicResource CommonBackgroundColor_Disabled}" />
+    <SolidColorBrush x:Key="ButtonForegroundBrush_Disabled" Color="{DynamicResource CommonForegroundColor_Disabled}" />
+    <SolidColorBrush x:Key="ButtonBorderBrush_Disabled" Color="{DynamicResource CommonBorderColor_Disabled}" />
+
+    <SolidColorBrush x:Key="ButtonBackgroundBrush_Checked" Color="{DynamicResource CommonBackgroundColor_Checked}" />
+    <SolidColorBrush x:Key="ButtonForegroundBrush_Checked" Color="{DynamicResource CommonForegroundColor_Checked}" />
+    <SolidColorBrush x:Key="ButtonBorderBrush_Checked" Color="{DynamicResource CommonBorderColor_Checked}" />
+
+    <!--
+        <SolidColorBrush x:Key="ButtonBackgroundBrush_Focused" Color="{DynamicResource CommonBackgroundColor_Focused}" />
+        <SolidColorBrush x:Key="ButtonForegroundBrush_Focused" Color="{DynamicResource CommonForegroundColor_Focused}" />
+    -->
+    <SolidColorBrush x:Key="ButtonBorderBrush_Focused" Color="{DynamicResource CommonBorderColor_Focused}" />
+
+    <!--  ItemsControl  -->
+    <Color x:Key="ItemsControlBackgroundColor">#ffffff</Color>
+    <Color x:Key="ItemsControlBorderColor">#cccccc</Color>
+    <Color x:Key="ItemsControlTextColor">#ffffff</Color>
+    <Color x:Key="ItemsControlBackgroundColor_Disabled">#ffffff</Color>
+    <SolidColorBrush x:Key="ItemsControlBackgroundBrush" Color="{DynamicResource ItemsControlBackgroundColor}" />
+    <SolidColorBrush x:Key="ItemsControlBorderBrush" Color="{DynamicResource ItemsControlBorderColor}" />
+    <SolidColorBrush x:Key="ItemsControlTextBrush" Color="{DynamicResource ItemsControlTextColor}" />
+    <SolidColorBrush x:Key="ItemsControlBackgroundBrush_Disabled" Color="{DynamicResource ItemsControlBackgroundColor_Disabled}" />
+
+    <Color x:Key="ItemBackgroundColor">#ffffff</Color>
+    <Color x:Key="ItemBackgroundColor_Hover">#FF007ACC</Color>
+    <Color x:Key="ItemBackgroundColor_Selected">#FF007ACC</Color>
+    <Color x:Key="ItemBackgroundColor_SelectedInactive">#FF007ACC</Color>
+    <Color x:Key="ItemBackgroundColor_Highlighted">#FF007ACC</Color>
+    <Color x:Key="ItemBackgroundColor_Disabled">#ffffff</Color>
+    <SolidColorBrush x:Key="ItemBackgroundBrush" Color="{DynamicResource ItemBackgroundColor}" />
+    <SolidColorBrush x:Key="ItemBackgroundBrush_Hover" Color="{DynamicResource ItemBackgroundColor_Hover}" />
+    <SolidColorBrush x:Key="ItemBackgroundBrush_Selected" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+    <SolidColorBrush x:Key="ItemBackgroundBrush_SelectedInactive" Color="{DynamicResource ItemBackgroundColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="ItemBackgroundBrush_Highlighted" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+    <SolidColorBrush x:Key="ItemBackgroundBrush_Disabled" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+
+    <Color x:Key="ItemBorderColor">#cccccc</Color>
+    <Color x:Key="ItemBorderColor_Hover">#FF007ACC</Color>
+    <Color x:Key="ItemBorderColor_Selected">#FF007ACC</Color>
+    <Color x:Key="ItemBorderColor_SelectedInactive">#FF007ACC</Color>
+    <Color x:Key="ItemBorderColor_Highlighted">#FF007ACC</Color>
+    <Color x:Key="ItemBorderColor_Disabled">#cccccc</Color>
+    <SolidColorBrush x:Key="ItemBorderBrush" Color="{DynamicResource ItemBorderColor}" />
+    <SolidColorBrush x:Key="ItemBorderBrush_Hover" Color="{DynamicResource ItemBorderColor_Hover}" />
+    <SolidColorBrush x:Key="ItemBorderBrush_Selected" Color="{DynamicResource ItemBorderColor_Selected}" />
+    <SolidColorBrush x:Key="ItemBorderBrush_SelectedInactive" Color="{DynamicResource ItemBorderColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="ItemBorderBrush_Highlighted" Color="{DynamicResource ItemBorderColor_Selected}" />
+    <SolidColorBrush x:Key="ItemBorderBrush_Disabled" Color="{DynamicResource ItemBorderColor_Selected}" />
+
+    <Color x:Key="ItemTextColor">#333333</Color>
+    <Color x:Key="ItemTextColor_Hover">#FFFFFFFF</Color>
+    <Color x:Key="ItemTextColor_Selected">#FFFFFFFF</Color>
+    <Color x:Key="ItemTextColor_SelectedInactive">#FFFFFFFF</Color>
+    <Color x:Key="ItemTextColor_Highlighted">#FFFFFFFF</Color>
+    <Color x:Key="ItemTextColor_Disabled">#FF007ACC</Color>
+
+    <SolidColorBrush x:Key="ItemTextBrush" Color="{DynamicResource ItemTextColor}" />
+    <SolidColorBrush x:Key="ItemTextBrush_Hover" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="ItemTextBrush_Selected" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="ItemTextBrush_SelectedInactive" Color="{DynamicResource ItemTextColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="ItemTextBrush_Highlighted" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="ItemTextBrush_Disabled" Color="{DynamicResource ItemTextColor_Disabled}" />
+
+    <SolidColorBrush x:Key="ItemsViewColumnHeaderBackgroundBrush" />
+    <SolidColorBrush x:Key="ItemsViewColumnHeaderBorderBrush" />
+    <SolidColorBrush x:Key="ItemsViewColumnHeaderForegroundBrush" />
+    <SolidColorBrush x:Key="ItemsViewRowHeaderBackgroundBrush" />
+    <SolidColorBrush x:Key="ItemsViewRowHeaderBorderBrush" />
+    <SolidColorBrush x:Key="ItemsViewRowHeaderForegroundBrush" />
+
+    <!--  Selection  -->
+    <SolidColorBrush x:Key="CommonBackgroundBrush_Selection" Color="{DynamicResource AppHighlightedColor}" />
+
+    <!--  Menu  -->
+    <SolidColorBrush x:Key="MenuText" Color="#66000000" />
+    <SolidColorBrush x:Key="MenuTextHover" Color="#bb000000" />
+    <SolidColorBrush x:Key="MenuTextSelected" Color="#333333" />
+    <SolidColorBrush x:Key="SubMenuText" Color="#99000000" />
+    <SolidColorBrush x:Key="SubMenuTextHover" Color="#66000000" />
+    <SolidColorBrush x:Key="SubMenuTextSelected" Color="#333333" />
+
+    <!--  ListBox  -->
+    <SolidColorBrush x:Key="ListBoxBackgroundBrush" Color="{DynamicResource ItemsControlBackgroundColor}" />
+    <SolidColorBrush x:Key="ListBoxBorderBrush" Color="{DynamicResource ItemsControlBorderColor}" />
+    <SolidColorBrush x:Key="ListBoxTextBrush" Color="{DynamicResource ItemsControlTextColor}" />
+    <SolidColorBrush x:Key="ListBoxBackgroundBrush_Disabled" Color="{DynamicResource ItemsControlBackgroundColor_Disabled}" />
+
+    <SolidColorBrush x:Key="ListBoxItemBackgroundBrush" Color="{DynamicResource ItemBackgroundColor}" />
+    <SolidColorBrush x:Key="ListBoxItemBackgroundBrush_Hover" Color="{DynamicResource ItemBackgroundColor_Hover}" />
+    <SolidColorBrush x:Key="ListBoxItemBackgroundBrush_Selected" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+    <SolidColorBrush x:Key="ListBoxItemBackgroundBrush_SelectedInactive" Color="{DynamicResource ItemBackgroundColor_SelectedInactive}" />
+
+    <SolidColorBrush x:Key="ListBoxItemBorderBrush" Color="{DynamicResource ItemBorderColor}" />
+    <SolidColorBrush x:Key="ListBoxItemBorderBrush_Hover" Color="{DynamicResource ItemBorderColor_Hover}" />
+    <SolidColorBrush x:Key="ListBoxItemBorderBrush_Selected" Color="{DynamicResource ItemBorderColor_Selected}" />
+    <SolidColorBrush x:Key="ListBoxItemBorderBrush_SelectedInactive" Color="{DynamicResource ItemBorderColor_SelectedInactive}" />
+
+    <SolidColorBrush x:Key="ListBoxItemTextBrush" Color="{DynamicResource ItemTextColor}" />
+    <SolidColorBrush x:Key="ListBoxItemTextBrush_Selected" Color="{DynamicResource ItemTextColor_Selected}" />
+    <SolidColorBrush x:Key="ListBoxItemTextBrush_Hover" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="ListBoxItemTextBrush_SelectedInactive" Color="{DynamicResource ItemTextColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="ListBoxItemTextBrush_Disabled" Color="{DynamicResource ItemTextColor_Disabled}" />
+    <!--  ComboBox  -->
+    <SolidColorBrush x:Key="ComboBoxBackgroundBrush" Color="{DynamicResource ItemsControlBackgroundColor}" />
+    <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{DynamicResource ItemsControlBorderColor}" />
+    <SolidColorBrush x:Key="ComboBoxTextBrush" Color="{DynamicResource ItemsControlTextColor}" />
+    <SolidColorBrush x:Key="ComboBoxBackgroundBrush_Disabled" Color="{DynamicResource ItemsControlBackgroundColor_Disabled}" />
+
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundBrush" Color="{DynamicResource ItemBackgroundColor}" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundBrush_Hover" Color="{DynamicResource ItemBackgroundColor_Hover}" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundBrush_Selected" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundBrush_SelectedInactive" Color="{DynamicResource ItemBackgroundColor_SelectedInactive}" />
+
+    <SolidColorBrush x:Key="ComboBoxItemBorderBrush" Color="{DynamicResource ItemBorderColor}" />
+    <SolidColorBrush x:Key="ComboBoxItemBorderBrush_Hover" Color="{DynamicResource ItemBorderColor_Hover}" />
+    <SolidColorBrush x:Key="ComboBoxItemBorderBrush_Selected" Color="{DynamicResource ItemBorderColor_Selected}" />
+    <SolidColorBrush x:Key="ComboBoxItemBorderBrush_SelectedInactive" Color="{DynamicResource ItemBorderColor_SelectedInactive}" />
+
+    <SolidColorBrush x:Key="ComboBoxItemTextBrush" Color="{DynamicResource ItemTextColor}" />
+    <SolidColorBrush x:Key="ComboBoxItemTextBrush_Selected" Color="{DynamicResource ItemTextColor_Selected}" />
+    <SolidColorBrush x:Key="ComboBoxItemTextBrush_Hover" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="ComboBoxItemTextBrush_SelectedInactive" Color="{DynamicResource ItemTextColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="ComboBoxItemTextBrush_Disabled" Color="{DynamicResource ItemTextColor_Disabled}" />
+
+    <!--  Hyperlink  -->
+    <SolidColorBrush x:Key="Hyperlink" Color="{DynamicResource AppHighlightedColor}" />
+    <SolidColorBrush x:Key="HyperlinkHover" Color="{DynamicResource AppHighlightedColor}" />
+    <SolidColorBrush x:Key="HyperlinkDisabled" Color="#919191" />
+    <!--  Slider  -->
+    <SolidColorBrush x:Key="SliderSelection_BackgroundBrush" Color="{DynamicResource AppHighlightedColor}" />
+    <SolidColorBrush x:Key="SliderSelection_BorderBrush" Color="{DynamicResource AppHighlightedColor}" />
+    <SolidColorBrush x:Key="SliderThumb_BackgroundBrush" Color="#ffffff" />
+    <SolidColorBrush x:Key="SliderThumbDragging_BackgroundBrush" Color="{DynamicResource AppHighlightedColor}" />
+    <SolidColorBrush x:Key="SliderThumbHover_BackgroundBrush" Color="#dddddd" />
+    <SolidColorBrush x:Key="SliderThumbDisabled_BackgroundBrush" Color="#cccccc" />
+    <SolidColorBrush x:Key="SliderThumb_BorderBrush" Color="#cccccc" />
+    <SolidColorBrush x:Key="SliderThumbDragging_BorderBrush" Color="{DynamicResource AppHighlightedColor}" />
+    <SolidColorBrush x:Key="SliderThumbHover_BorderBrush" Color="#cccccc" />
+    <SolidColorBrush x:Key="SliderThumbDisabled_BorderBrush" Color="#cccccc" />
+    <SolidColorBrush x:Key="SliderTrack_BackgroundBrush" Color="#cccccc" />
+    <SolidColorBrush x:Key="SliderTrack_BorderBrush" Color="#cccccc" />
+    <SolidColorBrush x:Key="SliderTick" Color="#919191" />
+    <SolidColorBrush x:Key="SliderTickDisabled" Color="#cccccc" />
+
+    <SolidColorBrush x:Key="PopupBackground" Color="#ffffff" />
+
+    <SolidColorBrush x:Key="TabControlNormalBorderBrush" Color="#282828" />
+    <LinearGradientBrush x:Key="TabPanelBackground" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#3c3c3c" />
+        <GradientStop Offset=".5" Color="#3a3a3a" />
+        <GradientStop Offset="1" Color="#363636" />
+    </LinearGradientBrush>
+
+
+    <SolidColorBrush x:Key="MenuItemCheckBrush" Color="Black" />
+
+    <SolidColorBrush x:Key="PanelBackground" Color="#FF252525" />
+    <SolidColorBrush x:Key="PanelBorderBrush" Color="#FF434346" />
+    <SolidColorBrush x:Key="Tool_BackgroundBrush" Color="#FF252525" />
+
+    <SolidColorBrush x:Key="HotForeground" Color="WhiteSmoke" />
+    <SolidColorBrush x:Key="HotBackground" Color="#FF3F3F46" />
+    <SolidColorBrush x:Key="HotBorderBrush" Color="#FF007ACC" />
+    <SolidColorBrush x:Key="HotActiveForeground" Color="White" />
+    <SolidColorBrush x:Key="HotActiveBackground" Color="#FF007ACC" />
+    <SolidColorBrush x:Key="HotActiveBorderBrush" Color="#FF007ACC" />
+
+    <!--  ProgressBar  -->
+    <SolidColorBrush x:Key="ProgressBarBackgroundBrush" Color="#ffffff" />
+    <SolidColorBrush x:Key="ProgressBarForegroundBrush" Color="#333333" />
+    <SolidColorBrush x:Key="ProgressBarBorderBrush" Color="#cccccc" />
+
+    <!--  DataGrid & ListView & GridView  -->
+    <SolidColorBrush x:Key="DataGridBackground" Color="{DynamicResource CommonBackgroundColor}" />
+    <SolidColorBrush x:Key="DataGridRowBackground" Color="{DynamicResource CommonBackgroundColor}" />
+    <SolidColorBrush x:Key="DataGridRowHeaderBackground" Color="{DynamicResource CommonBackgroundColor}" />
+    <SolidColorBrush x:Key="DataGridColumnHeaderBackground" Color="{DynamicResource CommonBackgroundColor}" />
+
+    <SolidColorBrush x:Key="DataGridBorderBrush" Color="{DynamicResource CommonBorderColor}" />
+    <SolidColorBrush x:Key="DataGridRowBorderBrush" Color="{DynamicResource CommonBorderColor}" />
+    <SolidColorBrush x:Key="DataGridRowHeaderBorderBrush" Color="{DynamicResource CommonBorderColor}" />
+    <SolidColorBrush x:Key="DataGridColumnHeaderBorderBrush" Color="{DynamicResource CommonBorderColor}" />
+
+
+    <SolidColorBrush x:Key="DataViewBackground" Color="{DynamicResource CommonBackgroundColor}" />
+    <SolidColorBrush x:Key="DataViewBorderBrush" Color="{DynamicResource CommonBorderColor}" />
+
+    <SolidColorBrush x:Key="DataViewRowBackground" Color="{DynamicResource CommonBackgroundColor}" />
+    <SolidColorBrush x:Key="DataViewRowBorderBrush" Color="{DynamicResource CommonBorderColor}" />
+
+    <SolidColorBrush x:Key="DataViewRowHeaderBackground" Color="{DynamicResource CommonBackgroundColor}" />
+    <SolidColorBrush x:Key="DataViewRowHeaderBorderBrush" Color="{DynamicResource CommonBorderColor}" />
+
+    <SolidColorBrush x:Key="DataViewColumnHeaderBackground" Color="{DynamicResource CommonBackgroundColor}" />
+    <SolidColorBrush x:Key="DataViewColumnHeaderBorderBrush" Color="{DynamicResource CommonBorderColor}" />
+
+    <!--  ListView  -->
+    <SolidColorBrush x:Key="ListViewBackgroundBrush" Color="{DynamicResource ItemsControlBackgroundColor}" />
+    <SolidColorBrush x:Key="ListViewBorderBrush" Color="{DynamicResource ItemsControlBorderColor}" />
+    <SolidColorBrush x:Key="ListViewTextBrush" Color="{DynamicResource ItemsControlTextColor}" />
+    <SolidColorBrush x:Key="ListViewBackgroundBrush_Disabled" Color="{DynamicResource ItemsControlBackgroundColor_Disabled}" />
+
+    <SolidColorBrush x:Key="ListViewItemBackgroundBrush" Color="{DynamicResource ItemBackgroundColor}" />
+    <SolidColorBrush x:Key="ListViewItemBackgroundBrush_Hover" Color="{DynamicResource ItemBackgroundColor_Hover}" />
+    <SolidColorBrush x:Key="ListViewItemBackgroundBrush_Selected" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+    <SolidColorBrush x:Key="ListViewItemBackgroundBrush_SelectedInactive" Color="{DynamicResource ItemBackgroundColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="ListViewItemBackgroundBrush_Highlighted" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+    <SolidColorBrush x:Key="ListViewItemBackgroundBrush_Disabled" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+
+    <SolidColorBrush x:Key="ListViewItemBorderBrush" Color="{DynamicResource ItemBorderColor}" />
+    <SolidColorBrush x:Key="ListViewItemBorderBrush_Hover" Color="{DynamicResource ItemBorderColor_Hover}" />
+    <SolidColorBrush x:Key="ListViewItemBorderBrush_Selected" Color="{DynamicResource ItemBorderColor_Selected}" />
+    <SolidColorBrush x:Key="ListViewItemBorderBrush_SelectedInactive" Color="{DynamicResource ItemBorderColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="ListViewItemBorderBrush_Highlighted" Color="{DynamicResource ItemBorderColor_Selected}" />
+    <SolidColorBrush x:Key="ListViewItemBorderBrush_Disabled" Color="{DynamicResource ItemBorderColor_Selected}" />
+
+    <SolidColorBrush x:Key="ListViewItemTextBrush" Color="{DynamicResource ItemTextColor}" />
+    <SolidColorBrush x:Key="ListViewItemTextBrush_Hover" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="ListViewItemTextBrush_Selected" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="ListViewItemTextBrush_SelectedInactive" Color="{DynamicResource ItemTextColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="ListViewItemTextBrush_Highlighted" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="ListViewItemTextBrush_Disabled" Color="{DynamicResource ItemTextColor_Disabled}" />
+
+    <SolidColorBrush x:Key="ListViewColumnHeaderBackgroundBrush" />
+    <SolidColorBrush x:Key="ListViewColumnHeaderBorderBrush" />
+    <SolidColorBrush x:Key="ListViewColumnHeaderForegroundBrush" />
+    <SolidColorBrush x:Key="ListViewRowHeaderBackgroundBrush" />
+    <SolidColorBrush x:Key="ListViewRowHeaderBorderBrush" />
+    <SolidColorBrush x:Key="ListViewRowHeaderForegroundBrush" />
+    <!--  TreeListView  -->
+    <SolidColorBrush x:Key="TreeListViewBackgroundBrush" Color="{DynamicResource ItemsControlBackgroundColor}" />
+    <SolidColorBrush x:Key="TreeListViewBorderBrush" Color="{DynamicResource ItemsControlBorderColor}" />
+    <SolidColorBrush x:Key="TreeListViewTextBrush" Color="{DynamicResource ItemsControlTextColor}" />
+    <SolidColorBrush x:Key="TreeListViewBackgroundBrush_Disabled" Color="{DynamicResource ItemsControlBackgroundColor_Disabled}" />
+
+    <SolidColorBrush x:Key="TreeListViewItemBackgroundBrush" Color="{DynamicResource ItemBackgroundColor}" />
+    <SolidColorBrush x:Key="TreeListViewItemBackgroundBrush_Hover" Color="{DynamicResource ItemBackgroundColor_Hover}" />
+    <SolidColorBrush x:Key="TreeListViewItemBackgroundBrush_Selected" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+    <SolidColorBrush x:Key="TreeListViewItemBackgroundBrush_SelectedInactive" Color="{DynamicResource ItemBackgroundColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="TreeListViewItemBackgroundBrush_Highlighted" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+    <SolidColorBrush x:Key="TreeListViewItemBackgroundBrush_Disabled" Color="{DynamicResource ItemBackgroundColor_Selected}" />
+
+    <SolidColorBrush x:Key="TreeListViewItemBorderBrush" Color="{DynamicResource ItemBorderColor}" />
+    <SolidColorBrush x:Key="TreeListViewItemBorderBrush_Hover" Color="{DynamicResource ItemBorderColor_Hover}" />
+    <SolidColorBrush x:Key="TreeListViewItemBorderBrush_Selected" Color="{DynamicResource ItemBorderColor_Selected}" />
+    <SolidColorBrush x:Key="TreeListViewItemBorderBrush_SelectedInactive" Color="{DynamicResource ItemBorderColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="TreeListViewItemBorderBrush_Highlighted" Color="{DynamicResource ItemBorderColor_Selected}" />
+    <SolidColorBrush x:Key="TreeListViewItemBorderBrush_Disabled" Color="{DynamicResource ItemBorderColor_Selected}" />
+
+    <SolidColorBrush x:Key="TreeListViewItemTextBrush" Color="{DynamicResource ItemTextColor}" />
+    <SolidColorBrush x:Key="TreeListViewItemTextBrush_Hover" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="TreeListViewItemTextBrush_Selected" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="TreeListViewItemTextBrush_SelectedInactive" Color="{DynamicResource ItemTextColor_SelectedInactive}" />
+    <SolidColorBrush x:Key="TreeListViewItemTextBrush_Highlighted" Color="{DynamicResource ItemTextColor_Hover}" />
+    <SolidColorBrush x:Key="TreeListViewItemTextBrush_Disabled" Color="{DynamicResource ItemTextColor_Disabled}" />
+
+    <SolidColorBrush x:Key="TreeListViewToggleButtonBorderBrush" Color="#FF4B4B4B" />
+
+    <!--  ScrollBar  -->
+    <SolidColorBrush x:Key="ScrollBar_BorderBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="ScrollBar_BackgroundBrush" Color="#FFEBEBEB" />
+    <SolidColorBrush x:Key="ScrollBarIcon_BackgroundBrush" Color="#FFEBEBEB" />
+    <SolidColorBrush x:Key="ScrollBarIcon_ForegroundBrush" Color="#FF868999" />
+    <SolidColorBrush x:Key="ScrollBarIconHover_BackgroundBrush" Color="#FFEBEBEB" />
+    <SolidColorBrush x:Key="ScrollBarIconHover_ForegroundBrush" Color="#FF1C97EA" />
+    <SolidColorBrush x:Key="ScrollBarIconPress_BackgroundBrush" Color="#FFEBEBEB" />
+    <SolidColorBrush x:Key="ScrollBarIconPress_ForegroundBrush" Color="#FF007ACC" />
+    <SolidColorBrush x:Key="ScrollBarIconDisabled_BackgroundBrush" Color="#FFEBEBEB" />
+    <SolidColorBrush x:Key="ScrollBarIconDisabled_ForegroundBrush" Color="#FFCACBD3" />
+    <SolidColorBrush x:Key="ScrollBarThumb_BackgroundBrush" Color="#FFC6C7C6" />
+    <SolidColorBrush x:Key="ScrollBarThumbHover_BackgroundBrush" Color="#FF888888" />
+    <SolidColorBrush x:Key="ScrollBarThumbPress_BackgroundBrush" Color="#FF6A6A6A" />
+
+    <Color x:Key="SeparatorColor">#CCCEDB</Color>
+    <Color x:Key="ControlOpenColor">#E7E8EC</Color>
+    <Color x:Key="ControlHighlightedColor">#FEFEFE</Color>
+
+    <SolidColorBrush x:Key="ControlOpenColorBrush" Color="{DynamicResource ControlOpenColor}" />
+    <SolidColorBrush x:Key="SeparatorColorBrush" Color="{DynamicResource SeparatorColor}" />
+    <SolidColorBrush x:Key="ControlHighlightedColorBrush" Color="{DynamicResource ControlHighlightedColor}" />
+    <SolidColorBrush x:Key="MenuItemDisabled_ForegroundBrush" Color="#FF9A9A9A" />
+</ResourceDictionary>

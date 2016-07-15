@@ -51,6 +51,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Panels\DragDock\DragDock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Progress\LoadingIndicator\Styles\Apple.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,28 +111,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\TreeListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gif\AnimationCache.cs" />
-    <Compile Include="Gif\Decoding\GifApplicationExtension.cs" />
-    <Compile Include="Gif\Decoding\GifBlock.cs" />
-    <Compile Include="Gif\Decoding\GifBlockKind.cs" />
-    <Compile Include="Gif\Decoding\GifColor.cs" />
-    <Compile Include="Gif\Decoding\GifCommentExtension.cs" />
-    <Compile Include="Gif\Decoding\GifDecoderException.cs" />
-    <Compile Include="Gif\Decoding\GifExtension.cs" />
-    <Compile Include="Gif\Decoding\GifFile.cs" />
-    <Compile Include="Gif\Decoding\GifFrame.cs" />
-    <Compile Include="Gif\Decoding\GifGraphicControlExtension.cs" />
-    <Compile Include="Gif\Decoding\GifHeader.cs" />
-    <Compile Include="Gif\Decoding\GifHelpers.cs" />
-    <Compile Include="Gif\Decoding\GifImageData.cs" />
-    <Compile Include="Gif\Decoding\GifImageDescriptor.cs" />
-    <Compile Include="Gif\Decoding\GifLogicalScreenDescriptor.cs" />
-    <Compile Include="Gif\Decoding\GifPlainTextExtension.cs" />
-    <Compile Include="Gif\Decoding\GifTrailer.cs" />
-    <Compile Include="Gif\ImageAnimationController.cs" />
-    <Compile Include="Gif\ImageBehavior.cs" />
+    <Compile Include="Animation\AnimatedHeaderedContentControl.cs" />
+    <Compile Include="Animation\AnimationState.cs" />
+    <Compile Include="Attached\AttachDataGridColumnHeader.cs" />
+    <Compile Include="Attached\AttachGridViewColumnHeader.cs" />
+    <Compile Include="Attached\AttachHelper.cs" />
+    <Compile Include="Attached\AttachStackPanel.cs" />
+    <Compile Include="Attached\AttachUniformGrid.cs" />
+    <Compile Include="Attached\AttachWindow.cs" />
+    <Compile Include="CustomWindow\CustomChromeWindow.cs" />
+    <Compile Include="CustomWindow\DisposableObject.cs" />
+    <Compile Include="CustomWindow\DpiHelper.cs" />
+    <Compile Include="CustomWindow\HwndWrapper.cs" />
+    <Compile Include="CustomWindow\INonClientArea.cs" />
+    <Compile Include="CustomWindow\MainWindowTitleBar.cs" />
+    <Compile Include="CustomWindow\MainWindowTitleBarAutomationPeer.cs" />
+    <Compile Include="CustomWindow\Screen.cs" />
+    <Compile Include="ModernButton.cs" />
+    <Compile Include="Panels\DragDock\DragDockPanel.cs" />
+    <Compile Include="Panels\DragDock\DragDockPanelHost.cs" />
+    <Compile Include="Panels\DragDock\DragEvent.cs" />
+    <Compile Include="Panels\DragDock\DraggablePanel.cs" />
+    <Compile Include="Panels\DragDock\PanelState.cs" />
     <Compile Include="ImageStrip.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Panels\AutoGrid.cs" />
@@ -151,6 +161,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TreeListView.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -162,6 +173,38 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\bottom.png" />
+    <Resource Include="Resources\bottomleft.png" />
+    <Resource Include="Resources\bottomright.png" />
+    <Resource Include="Resources\CloseImage.png" />
+    <Resource Include="Resources\cornerbottomleft.png" />
+    <Resource Include="Resources\cornerbottomright.png" />
+    <Resource Include="Resources\cornertopleft.png" />
+    <Resource Include="Resources\cornertopright.png" />
+    <Resource Include="Resources\left.png" />
+    <Resource Include="Resources\leftbottom.png" />
+    <Resource Include="Resources\lefttop.png" />
+    <Resource Include="Resources\MaximizeImage.png" />
+    <Resource Include="Resources\MaximizeRestoreImage.png" />
+    <Resource Include="Resources\MinimizeImage.png" />
+    <Resource Include="Resources\right.png" />
+    <Resource Include="Resources\rightbottom.png" />
+    <Resource Include="Resources\righttop.png" />
+    <Resource Include="Resources\top.png" />
+    <Resource Include="Resources\topleft.png" />
+    <Resource Include="Resources\topright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeMask.WPF\CodeMask.WPF.csproj">
+      <Project>{ea80b0f7-f450-4963-ae63-626fd5a9a213}</Project>
+      <Name>CodeMask.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NativeMethods\NativeMethods.csproj">
+      <Project>{fbc1a727-5586-4dd8-a105-4ef50d05492a}</Project>
+      <Name>NativeMethods</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

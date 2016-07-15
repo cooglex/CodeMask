@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="ThemeTest.TreeListViewDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cm="https://github.com/x-skywalker/codemask"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="ColumnBorderStyle" TargetType="Border">
+            <Setter Property="BorderThickness" Value="0,0,1,0" />
+            <Setter Property="BorderBrush" Value="{DynamicResource TreeListViewBorderBrush}" />
+        </Style>
+
+        <HierarchicalDataTemplate x:Key="TreeListViewItemTemplate" ItemsSource="{Binding Path=Children}" />
+        <DataTemplate x:Key="CellTemplate_Name">
+            <Border Style="{StaticResource ColumnBorderStyle}">
+                <DockPanel>
+                    <ToggleButton x:Name="Expander"
+                                  Margin="{Binding Level,
+                                                   Converter={StaticResource LevelToIndentConverter},
+                                                   RelativeSource={RelativeSource AncestorType={x:Type cm:TreeListViewItem}}}"
+                                  ClickMode="Press"
+                                  IsChecked="{Binding Path=IsExpanded,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type cm:TreeListViewItem}}}"
+                                  Style="{DynamicResource ExpandCollapseToggleStyle}" />
+                    <TextBlock Margin="2,0,0,0" Text="{Binding ID}" />
+                </DockPanel>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger
+                    Binding="{Binding Path=HasItems, RelativeSource={RelativeSource AncestorType={x:Type cm:TreeListViewItem}}}"
+                    Value="False">
+                    <Setter TargetName="Expander" Property="Visibility" Value="Hidden" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+        <GridViewColumnCollection x:Key="gvcc">
+            <GridViewColumn Width="140"
+                            CellTemplate="{StaticResource CellTemplate_Name}"
+                            Header="名称"
+                            HeaderContainerStyle="{StaticResource GridViewColumnHeaderDefault_Style}" />
+            <GridViewColumn Header="作业类型" HeaderContainerStyle="{DynamicResource GridViewColumnHeaderDefault_Style}">
+                <GridViewColumn.CellTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource ColumnBorderStyle}">
+                            <TextBlock Text="{Binding Desc}" />
+                        </Border>
+                    </DataTemplate>
+                </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            <GridViewColumn Header="省" HeaderContainerStyle="{StaticResource GridViewColumnHeaderDefault_Style}">
+                <GridViewColumn.CellTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource ColumnBorderStyle}">
+                            <TextBlock Text="{Binding Note}" />
+                        </Border>
+                    </DataTemplate>
+                </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+        </GridViewColumnCollection>
+    </UserControl.Resources>
+    <Grid>
+        <cm:TreeListView ColumnsHeader="{StaticResource gvcc}"
+                         ItemTemplate="{StaticResource TreeListViewItemTemplate}"
+                         ItemsSource="{Binding TestSource}" />
+    </Grid>
+</UserControl>

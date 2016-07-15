@@ -1,0 +1,84 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:attach="clr-namespace:CodeMask.WPF.Controls.Attached"
+                    xmlns:controls="clr-namespace:CodeMask.WPF.Controls.Progress"
+                    xmlns:panels="clr-namespace:CodeMask.WPF.Controls.Panels">
+
+    <ControlTemplate x:Key="ThreeDotsControlTemplate" TargetType="{x:Type controls:LoadingIndicator}">
+        <Border x:Name="PART_Border"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="SizeStates">
+                    <VisualState x:Name="Large" />
+                    <VisualState x:Name="Small" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ActiveStates">
+                    <VisualState x:Name="Inactive" />
+                    <VisualState x:Name="Active">
+                        <Storyboard Duration="0:0:1.900"
+                                    RepeatBehavior="Forever"
+                                    SpeedRatio="{TemplateBinding SpeedRatio}">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Ellipse0" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.000" Value="0" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.500" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.600" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.100" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.250" Value="0" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.750" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.850" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.350" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Ellipse2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.500" Value="0" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.000" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.100" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.600" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Ellipse0" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.000" Value="0" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.500" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.600" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.100" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.250" Value="0" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.750" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.850" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.350" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Ellipse2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.500" Value="0" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.000" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.100" Value="1" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.600" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border.Resources>
+                <Style TargetType="Ellipse">
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+                    <Setter Property="Width" Value="{Binding Path=(attach:AttachBase.ChildWidth), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" />
+                    <Setter Property="Height" Value="{Binding Path=(attach:AttachBase.ChildHeight), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" />
+                    <Setter Property="Fill" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" />
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform />
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Border.Resources>
+            <panels:StackPanelWithSpacing Orientation="{Binding Path=(attach:AttachBase.Orientation), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}" SpaceBetweenItems="{Binding Path=(attach:AttachBase.ChildSpace), RelativeSource={RelativeSource AncestorType=controls:LoadingIndicator}}">
+                <Ellipse x:Name="PART_Ellipse0" />
+                <Ellipse x:Name="PART_Ellipse1" />
+                <Ellipse x:Name="PART_Ellipse2" />
+            </panels:StackPanelWithSpacing>
+        </Border>
+    </ControlTemplate>
+</ResourceDictionary>

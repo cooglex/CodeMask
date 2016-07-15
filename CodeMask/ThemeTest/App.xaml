@@ -1,0 +1,52 @@
+﻿<Application x:Class="ThemeTest.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/Theme.Metro/LightBrushes.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/BaseStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/ScrollViewer.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/RadioButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/ToggleButton.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/Window.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/GridSplitter.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/Calendar.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/DatePicker.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/ProgressBar.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/Slider.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/Menu.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/ContextMenu.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/ListBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/CheckBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/ComboBox.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/TextBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/RichTextBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/PasswordBox.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/TabControl.xaml" />
+
+
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/GridView.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/ListView.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/DataGrid.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/TreeView.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/TreeListView.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/Expander.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+        <!--  <ResourceDictionary Source="pack://application:,,,/Theme.Metro;component/All.xaml"/>  -->
+    </Application.Resources>
+</Application>

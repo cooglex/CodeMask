@@ -1,3 +1,8 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:CodeMask.WPF.Controls" />
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CodeMask.WPF.Controls;component/Progress/LoadingIndicator/Styles/Style.xaml" />
+        <ResourceDictionary Source="/CodeMask.WPF.Controls;component/Panels/DragDock/DragDock.xaml" />
+        <ResourceDictionary Source="/CodeMask.WPF.Controls;component/Themes/TreeListView.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
+

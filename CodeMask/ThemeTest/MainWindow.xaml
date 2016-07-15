@@ -1,0 +1,470 @@
+﻿<cm:CustomChromeWindow x:Class="ThemeTest.MainWindow"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:cm="https://github.com/x-skywalker/codemask"
+                       xmlns:local="clr-namespace:ThemeTest"
+                       Title="MainWindow"
+                       Width="800"
+                       Height="600"
+                       ShowActivated="True"
+                       Style="{StaticResource MainWindow_Style}"
+                       WindowStartupLocation="CenterScreen"
+                       WindowState="Normal">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="文件(_F)">
+                <MenuItem Header="新建(_N)">
+                    <MenuItem Header="项目(_F)" />
+
+                    <MenuItem Header="团队项目(_F)" />
+                </MenuItem>
+                <MenuItem Header="关闭(_C)" />
+                <MenuItem Header="退出(_X)" InputGestureText="Alt+F4" />
+            </MenuItem>
+            <MenuItem Header="编辑(_E)" />
+            <MenuItem Header="视图(_V)" />
+            <MenuItem Header="项目(_P)" />
+            <MenuItem Header="生成(_B)" />
+            <MenuItem Header="工具(_T)" />
+            <MenuItem Header="测试(_S)" />
+            <MenuItem Header="体系结构(_C)" />
+            <MenuItem Header="窗口(_W)" />
+            <MenuItem Header="帮助(_H)" />
+        </Menu>
+        <UniformGrid Columns="1" Rows="1">
+            <TabControl SelectedIndex="-1" TabStripPlacement="Left">
+                <TabItem Header="LoadingIndicator">
+                    <cm:AutoGrid HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
+                                 Background="#F0000000"
+                                 ChildMargin="3"
+                                 ColumnCount="4"
+                                 ColumnWidth="*"
+                                 RowCount="4"
+                                 RowHeight="*">
+                        <cm:LoadingIndicator LoadingStyle="Apple" />
+                        <cm:LoadingIndicator LoadingStyle="Arcs" />
+                        <cm:LoadingIndicator LoadingStyle="ArcsRing" />
+                        <cm:LoadingIndicator LoadingStyle="Cogs" />
+                        <cm:LoadingIndicator LoadingStyle="DotCircle" />
+                        <cm:LoadingIndicator LoadingStyle="DoubleBounce" />
+                        <cm:LoadingIndicator LoadingStyle="FlipPlane" />
+                        <cm:LoadingIndicator LoadingStyle="Pulse" />
+                        <cm:LoadingIndicator LoadingStyle="Ring" />
+                        <cm:LoadingIndicator LoadingStyle="Swirl" />
+                        <cm:LoadingIndicator LoadingStyle="ThreeDots" />
+                        <cm:LoadingIndicator cm:AttachBase.Orientation="Vertical" LoadingStyle="ThreeDots" />
+                        <cm:LoadingIndicator LoadingStyle="Wave" />
+                        <cm:LoadingIndicator cm:AttachBase.Orientation="Vertical" LoadingStyle="Wave" />
+                    </cm:AutoGrid>
+
+                </TabItem>
+                <TabItem Header="Converters">
+                    <TabControl>
+                        <TabItem Header="UpperConverter">
+                            <StackPanel>
+                                <StackPanel.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Background" Value="Green" />
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                    </Style>
+                                    <cm:UpperConverter x:Key="UpperConverter" />
+                                    <cm:LowerConverter x:Key="LowerConverter" />
+                                    <cm:TrimConverter x:Key="TrimConverter" />
+                                </StackPanel.Resources>
+                                <TextBox x:Name="tb" Height="20" />
+                                <TextBlock Text="{Binding ElementName=tb, Path=Text, Converter={cm:UpperConverter}}" />
+                                <TextBlock
+                                    Text="{Binding ElementName=tb, Path=Text, Converter={StaticResource UpperConverter}}" />
+                                <TextBlock Text="{Binding ElementName=tb, Path=Text, Converter={cm:LowerConverter}}" />
+                                <TextBlock
+                                    Text="{Binding ElementName=tb, Path=Text, Converter={StaticResource LowerConverter}}" />
+                                <TextBlock Text="{Binding ElementName=tb, Path=Text, Converter={cm:TrimConverter}}" />
+                                <TextBlock
+                                    Text="{Binding ElementName=tb, Path=Text, Converter={StaticResource TrimConverter}}" />
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+                </TabItem>
+                <TabItem Header="DragDockPanel">
+                    <local:DragDockPanelDemo />
+                </TabItem>
+                <TabItem x:Name="ww" Header="Buttons">
+                    <local:DotBorder Width="150"
+                                     Height="150"
+                                     Background="Red"
+                                     SnapsToDevicePixels="True">
+                        <local:DotBorder.Lines>
+                            <local:BorderThickLines>
+                                <local:BorderThickLine Fill="Black"
+                                                       Length="6"
+                                                       Position="Left"
+                                                       Thickness="1" />
+                                <local:BorderThickLine Fill="Blue"
+                                                       Length="36"
+                                                       Position="Left"
+                                                       Thickness="3" />
+                                <local:BorderThickLine Fill="Green"
+                                                       Length="6"
+                                                       Position="Left"
+                                                       Thickness="1" />
+                            </local:BorderThickLines>
+                        </local:DotBorder.Lines>
+                        <Border Margin="10"
+                                Background="Yellow"
+                                BorderBrush="Green"
+                                BorderThickness="1,0,0,0">
+                            <Border Background="Orange" />
+                        </Border>
+                    </local:DotBorder>
+                </TabItem>
+                <TabItem x:Name="tabitem" Header="Buttons">
+                    <ScrollViewer>
+                        <StackPanel HorizontalAlignment="Left" Background="White">
+                            <StackPanel Width="140" HorizontalAlignment="Left">
+                                <Button Margin="0,0,0,8" Content="standard button" />
+                                <Button Margin="0,0,0,32"
+                                        Content="disabled button"
+                                        IsEnabled="False" />
+                            </StackPanel>
+                            <ToggleButton Margin="0,0,0,4" Content="standard checkbox" />
+                            <ToggleButton Margin="0,0,0,4"
+                                          Content="standard checkbox"
+                                          IsChecked="True" />
+                            <CheckBox Margin="0,0,0,4" Content="standard checkbox" />
+                            <CheckBox Margin="0,0,0,4"
+                                      Content="three state checkbox"
+                                      IsThreeState="True" />
+                            <CheckBox Margin="0,0,0,4"
+                                      Content="three state checkbox"
+                                      IsChecked="{x:Null}"
+                                      IsEnabled="False"
+                                      IsThreeState="True" />
+                            <CheckBox Margin="0,0,0,4"
+                                      Content="disabled checkbox"
+                                      IsEnabled="False" />
+                            <CheckBox Margin="0,0,0,32"
+                                      Content="disabled checked checkbox"
+                                      IsChecked="True"
+                                      IsEnabled="False" />
+                            <RadioButton Margin="0,0,0,4" Content="option 1" />
+                            <RadioButton Margin="0,0,0,4" Content="option 2" />
+                            <RadioButton Margin="0,0,0,4"
+                                         Content="option 3, disabled"
+                                         IsEnabled="False" />
+                            <RadioButton Content="another option, disabled and checked"
+                                         GroupName="Foo"
+                                         IsChecked="True"
+                                         IsEnabled="False" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="DataGrid">
+                    <local:DataGridDemo />
+                </TabItem>
+                <TabItem Header="Progress">
+                    <local:ProgressDemo />
+                </TabItem>
+                <TabItem Header="Text">
+                    <ScrollViewer>
+                        <StackPanel HorizontalAlignment="Left" Background="White">
+                            <TextBlock Margin="0,0,0,8"
+                                       Style="{StaticResource Heading2}"
+                                       Text="TEXT STYLING" />
+
+                            <TextBlock Margin="0,0,0,8"
+                                       Style="{StaticResource Heading1}"
+                                       Text="HEADING1" />
+                            <TextBlock Margin="0,0,0,8"
+                                       Style="{StaticResource Heading2}"
+                                       Text="HEADING2" />
+                            <TextBlock Margin="0,0,0,8"
+                                       Style="{StaticResource Title}"
+                                       Text="title" />
+                            <TextBlock Margin="0,0,0,8" Text="Normal" />
+                            <TextBlock Margin="0,0,0,8"
+                                       Style="{StaticResource Small}"
+                                       Text="small" />
+                            <TextBlock Margin="0,0,0,8"
+                                       Style="{StaticResource Emphasis}"
+                                       Text="EMPHASIS" />
+                            <TextBlock Margin="0,0,0,32"
+                                       Style="{StaticResource Fixed}"
+                                       Text="Fixed" />
+
+                            <TextBlock Margin="0,0,0,8"
+                                       Style="{StaticResource Heading2}"
+                                       Text="TEXT AND PASSWORDBOX" />
+                            <TextBox Margin="0,0,0,8" Text="textbox" />
+                            <TextBox Margin="0,0,0,8"
+                                     IsReadOnly="True"
+                                     Text="readonly textbox" />
+                            <TextBox Margin="0,0,0,8"
+                                     IsEnabled="False"
+                                     Text="disabled textbox" />
+                            <PasswordBox Margin="0,0,0,32" Password="12345" />
+
+                            <TextBlock Margin="0,0,0,8"
+                                       Style="{StaticResource Heading2}"
+                                       Text="LABEL" />
+                            <Label Margin="0,0,0,8" Content="label" />
+                            <Label Content="disabled label" IsEnabled="False" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Slider">
+                    <StackPanel Width="240" HorizontalAlignment="Left">
+                        <Slider Margin="0,0,0,16" />
+                        <Slider Margin="0,0,0,16"
+                                IsEnabled="False"
+                                TickPlacement="Both"
+                                Value="3" />
+                        <Slider Margin="0,0,0,16"
+                                IsSelectionRangeEnabled="True"
+                                SelectionEnd="7"
+                                SelectionStart="4"
+                                TickPlacement="Both" />
+
+
+                        <StackPanel Height="200" Orientation="Horizontal">
+                            <Slider Orientation="Vertical" />
+                            <Slider Margin="16,0,0,0"
+                                    IsEnabled="False"
+                                    Orientation="Vertical"
+                                    TickPlacement="Both"
+                                    Value="3" />
+                            <Slider Margin="16,0,0,0"
+                                    IsSelectionRangeEnabled="True"
+                                    Orientation="Vertical"
+                                    SelectionEnd="7"
+                                    SelectionStart="4"
+                                    TickPlacement="Both" />
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Date">
+                    <ScrollViewer>
+                        <StackPanel HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <Calendar Margin="0,0,8,0">
+                                    <Calendar.BlackoutDates>
+                                        <CalendarDateRange End="6/1/2013" Start="1/1/2013" />
+                                    </Calendar.BlackoutDates>
+                                </Calendar>
+                                <Calendar Margin="0,0,0,32" IsEnabled="False" />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Left">
+                                <DatePicker Margin="0,0,0,8" />
+                                <DatePicker IsEnabled="False" />
+                            </StackPanel>
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="ListBox">
+                    <UniformGrid>
+                        <ListBox MaxHeight="200">
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                            <ListBoxItem Content="asdasd" />
+                        </ListBox>
+
+                        <StackPanel VerticalAlignment="Center">
+                            <ComboBox MinWidth="100"
+                                      Margin="0,0,0,8"
+                                      HorizontalAlignment="Left">
+                                <ComboBoxItem Content="Item 1" />
+                                <ComboBoxItem Content="Item 2" />
+                                <ComboBoxItem Content="Item 3" />
+                                <ComboBoxItem Content="Item 4" />
+                                <ComboBoxItem Content="Item 5" />
+                            </ComboBox>
+                            <StackPanel Margin="0,5" Orientation="Horizontal">
+                                <ComboBox MinWidth="100"
+                                          Margin="0,0,0,32"
+                                          HorizontalAlignment="Left"
+                                          IsEditable="True">
+                                    <ComboBoxItem Content="Item 1" />
+                                    <ComboBoxItem Content="Item 2" />
+                                    <ComboBoxItem Content="Item 3" />
+                                    <ComboBoxItem Content="Item 4" />
+                                    <ComboBoxItem Content="Item 5" />
+                                </ComboBox>
+                            </StackPanel>
+                            <Rectangle Width="100"
+                                       Height="100"
+                                       Fill="Red">
+                                <Rectangle.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="文件(_F)">
+                                            <MenuItem Header="新建(_N)">
+                                                <MenuItem Header="项目(_F)" />
+
+                                                <MenuItem Header="团队项目(_F)" />
+                                            </MenuItem>
+                                            <MenuItem Header="关闭(_C)" />
+                                            <MenuItem Header="退出(_X)" InputGestureText="Alt+F4" />
+                                        </MenuItem>
+                                        <MenuItem Header="编辑(_E)" />
+                                        <MenuItem Header="视图(_V)" />
+                                    </ContextMenu>
+                                </Rectangle.ContextMenu>
+                            </Rectangle>
+                        </StackPanel>
+
+                    </UniformGrid>
+
+                </TabItem>
+                <TabItem Header="RichTextBox">
+                    <RichTextBox>
+                        <FlowDocument>
+                            <Paragraph x:Name="Output">
+                                <Hyperlink NavigateUri="www.baidu.com">www.baidu.com</Hyperlink>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </TabItem>
+                <TabItem Header="Expander">
+                    <UniformGrid Columns="2" Rows="2">
+                        <StackPanel>
+                            <Expander ExpandDirection="Down"
+                                      Header="Expander测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Down"
+                                      Header="Expander测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Down"
+                                      Header="Expander测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Down"
+                                      Header="Expander测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Expander ExpandDirection="Up"
+                                      Header="Expander测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Up"
+                                      Header="Expander测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Up"
+                                      Header="Expander测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Up"
+                                      Header="Expander测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Expander ExpandDirection="Left"
+                                      Header="测试测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Left"
+                                      Header="测试测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Left"
+                                      Header="测试测试测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Left"
+                                      Header="测试测试测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Expander ExpandDirection="Right"
+                                      Header="测试测试测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Right"
+                                      Header="测试测试测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Right"
+                                      Header="测试测试测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                            <Expander ExpandDirection="Right"
+                                      Header="测试测试测试"
+                                      Style="{StaticResource ExpanderDefault_Style}" />
+                        </StackPanel>
+                    </UniformGrid>
+                </TabItem>
+                <TabItem Header="DataGrid">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width=".2*" />
+                        </Grid.ColumnDefinitions>
+                        <DataGrid AutoGenerateColumns="True"
+                                  ItemsSource="{Binding CollList}"
+                                  Style="{StaticResource DataGridDefault_Style}" />
+                        <GridSplitter Style="{StaticResource H_GridSplitterDefault_Style}" />
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Expander Header="测试测试测试" Style="{StaticResource ExpanderDefault_Style}">
+                                <DataGrid MaxHeight="300"
+                                          AutoGenerateColumns="True"
+                                          ItemsSource="{Binding CollList}"
+                                          Style="{StaticResource DataGridDefault_Style}" />
+                            </Expander>
+                            <GridSplitter Style="{StaticResource V_GridSplitterDefault_Style}" />
+                            <Expander Grid.Row="1"
+                                      Header="测试测试测试"
+                                      Style="{StaticResource ExpanderDefault_Style}">
+                                <DataGrid MaxHeight="300"
+                                          AutoGenerateColumns="True"
+                                          ItemsSource="{Binding CollList}"
+                                          Style="{StaticResource DataGridDefault_Style}" />
+                            </Expander>
+                            <GridSplitter Grid.Row="1" Style="{StaticResource V_GridSplitterDefault_Style}" />
+                            <Expander Grid.Row="2"
+                                      Header="测试测试测试"
+                                      Style="{StaticResource ExpanderDefault_Style}">
+                                <DataGrid AutoGenerateColumns="True"
+                                          ItemsSource="{Binding CollList}"
+                                          Style="{StaticResource DataGridDefault_Style}" />
+                            </Expander>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="TreeListView">
+                    <local:TreeListViewDemo />
+                </TabItem>
+                <TabItem Header="ListView">
+                    <local:ListViewDemo />
+                </TabItem>
+            </TabControl>
+        </UniformGrid>
+
+    </DockPanel>
+</cm:CustomChromeWindow>

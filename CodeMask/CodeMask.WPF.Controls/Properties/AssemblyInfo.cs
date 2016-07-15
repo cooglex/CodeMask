@@ -55,5 +55,11 @@ using System.Windows.Markup;
 
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: XmlnsDefinition("http://schemas.github.com/cooglex", "CodeMask.WPF.Controls.Panels")]
-[assembly: XmlnsDefinition("http://schemas.github.com/cooglex", "CodeMask.WPF.Controls")]
+[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.Panels")]
+[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls")]
+[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.CustomWindow")]
+[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.Progress")]
+[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.Primitives")]
+[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.Panels.DragDock")]
+[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.Attached")]
+//[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.Gif")]

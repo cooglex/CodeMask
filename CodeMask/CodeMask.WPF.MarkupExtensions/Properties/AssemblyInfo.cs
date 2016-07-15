@@ -54,4 +54,4 @@ using System.Windows.Markup;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: XmlnsDefinition("https://github.com/cooglex/CodeMask", "CodeMask.WPF.MarkupExtensions")]
+[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.MarkupExtensions")]

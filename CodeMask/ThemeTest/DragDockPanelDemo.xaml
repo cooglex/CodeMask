@@ -1,0 +1,180 @@
+﻿<UserControl x:Class="ThemeTest.DragDockPanelDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dragDock="https://github.com/x-skywalker/codemask"
+             xmlns:local="clr-namespace:ThemeTest"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <Grid>
+        <dragDock:DragDockPanelHost x:Name="dragDockPanelHostWithItemTemplate"
+                                    MaxColumns="4"
+                                    MaxRows="5">
+            <dragDock:DragDockPanelHost.DefaultPanelStyle>
+                <Style TargetType="dragDock:DragDockPanel">
+                    <Setter Property="Background" Value="#FF1C1C1C" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="Foreground" Value="#FFEFCE5A" />
+                    <Setter Property="Padding" Value="1" />
+                    <Setter Property="Margin" Value="1" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="dragDock:DragDockPanel">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid Margin="{TemplateBinding Padding}" Background="#FF111111">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Border x:Name="HeaderBorder"
+                                                BorderBrush="#FF111111"
+                                                BorderThickness="0,1,0,0">
+                                            <DockPanel Background="#FF272727">
+                                                <ToggleButton x:Name="MaximizeToggleButton"
+                                                              Width="13"
+                                                              Margin="0,0,1,0"
+                                                              VerticalAlignment="Center"
+                                                              Cursor="Hand"
+                                                              DockPanel.Dock="Right"
+                                                              IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent},
+                                                                                  Mode=TwoWay,
+                                                                                  Path=IsMaximized}"
+                                                              SnapsToDevicePixels="True">
+                                                    <ToggleButton.Template>
+                                                        <ControlTemplate TargetType="ToggleButton">
+                                                            <Border>
+                                                                <VisualStateManager.VisualStateGroups>
+                                                                    <VisualStateGroup x:Name="FocusStates">
+                                                                        <VisualState x:Name="Focused" />
+                                                                        <VisualState x:Name="Unfocused" />
+                                                                    </VisualStateGroup>
+                                                                    <VisualStateGroup x:Name="CommonStates">
+                                                                        <VisualState x:Name="Disabled" />
+                                                                        <VisualState x:Name="Normal" />
+                                                                        <VisualState x:Name="MouseOver">
+                                                                            <Storyboard>
+                                                                                <DoubleAnimationUsingKeyFrames
+                                                                                    BeginTime="00:00:00"
+                                                                                    Storyboard.TargetName="rectangle"
+                                                                                    Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                                                    <SplineDoubleKeyFrame
+                                                                                        KeyTime="00:00:00" Value="0.6" />
+                                                                                    <SplineDoubleKeyFrame
+                                                                                        KeyTime="00:00:00.2000000"
+                                                                                        Value="0.3" />
+                                                                                </DoubleAnimationUsingKeyFrames>
+                                                                            </Storyboard>
+                                                                        </VisualState>
+                                                                        <VisualState x:Name="Pressed">
+                                                                            <Storyboard>
+                                                                                <DoubleAnimationUsingKeyFrames
+                                                                                    BeginTime="00:00:00"
+                                                                                    Duration="00:00:00.0010000"
+                                                                                    Storyboard.TargetName="rectangle"
+                                                                                    Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                                                    <SplineDoubleKeyFrame
+                                                                                        KeyTime="00:00:00" Value="0.15" />
+                                                                                </DoubleAnimationUsingKeyFrames>
+                                                                            </Storyboard>
+                                                                        </VisualState>
+                                                                    </VisualStateGroup>
+                                                                    <VisualStateGroup x:Name="CheckStates">
+                                                                        <VisualState x:Name="Checked">
+                                                                            <Storyboard>
+                                                                                <DoubleAnimationUsingKeyFrames
+                                                                                    BeginTime="00:00:00"
+                                                                                    Duration="00:00:00.0010000"
+                                                                                    Storyboard.TargetName="checkedArrow"
+                                                                                    Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                                                    <SplineDoubleKeyFrame
+                                                                                        KeyTime="00:00:00" Value="1" />
+                                                                                </DoubleAnimationUsingKeyFrames>
+                                                                                <DoubleAnimationUsingKeyFrames
+                                                                                    BeginTime="00:00:00"
+                                                                                    Duration="00:00:00.0010000"
+                                                                                    Storyboard.TargetName="uncheckedArrow"
+                                                                                    Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                                                    <SplineDoubleKeyFrame
+                                                                                        KeyTime="00:00:00" Value="0" />
+                                                                                </DoubleAnimationUsingKeyFrames>
+                                                                            </Storyboard>
+                                                                        </VisualState>
+                                                                        <VisualState x:Name="Unchecked">
+                                                                            <Storyboard />
+                                                                        </VisualState>
+                                                                        <VisualState x:Name="Indeterminate" />
+                                                                    </VisualStateGroup>
+                                                                </VisualStateManager.VisualStateGroups>
+                                                                <Grid>
+                                                                    <Border BorderBrush="#FF474747" BorderThickness="1">
+                                                                        <Grid>
+                                                                            <Path x:Name="uncheckedArrow"
+                                                                                  Margin="2"
+                                                                                  Data="M0.5,1.005 L6.2509999,1.005 M6.25,6.8800006 L6.25,0.5 M6.2520003,1.0880001 L0.50000024,6.8800001"
+                                                                                  Stretch="Fill"
+                                                                                  Stroke="#FF474747" />
+                                                                            <Path x:Name="checkedArrow"
+                                                                                  Margin="2"
+                                                                                  Data="M0.5,1.005 L6.2509999,1.005 M6.25,6.8800006 L6.25,0.5 M6.2520003,1.0880001 L0.50000024,6.8800001"
+                                                                                  Opacity="0"
+                                                                                  RenderTransformOrigin="0.5,0.5"
+                                                                                  Stretch="Fill"
+                                                                                  Stroke="#FF474747">
+                                                                                <Path.RenderTransform>
+                                                                                    <TransformGroup>
+                                                                                        <ScaleTransform />
+                                                                                        <SkewTransform />
+                                                                                        <RotateTransform Angle="180" />
+                                                                                        <TranslateTransform />
+                                                                                    </TransformGroup>
+                                                                                </Path.RenderTransform>
+                                                                            </Path>
+                                                                        </Grid>
+                                                                    </Border>
+                                                                    <Rectangle x:Name="rectangle"
+                                                                               Margin="1"
+                                                                               Fill="#FF474747"
+                                                                               Opacity="0" />
+                                                                </Grid>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </ToggleButton.Template>
+                                                </ToggleButton>
+                                                <Border x:Name="GripBarElement"
+                                                        Cursor="Hand"
+                                                        IsHitTestVisible="{TemplateBinding DraggingEnabled}">
+                                                    <ContentPresenter VerticalAlignment="Center"
+                                                                      Content="{Binding DataContext.Name,
+                                                                                        RelativeSource={RelativeSource TemplatedParent}}"
+                                                                      ContentTemplate="{TemplateBinding HeaderTemplate}" />
+                                                </Border>
+                                            </DockPanel>
+                                        </Border>
+                                        <ContentControl Grid.Row="1"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        Foreground="#FFEFCE5A" />
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="PanelState" Value="Minimized">
+                                        <Setter Property="Margin" Value="0" />
+                                        <Setter Property="Padding" Value="0" />
+                                        <Setter Property="BorderThickness" Value="1,1,1,0" />
+                                        <Setter TargetName="HeaderBorder" Property="BorderThickness" Value="0" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </dragDock:DragDockPanelHost.DefaultPanelStyle>
+        </dragDock:DragDockPanelHost>
+
+    </Grid>
+</UserControl>

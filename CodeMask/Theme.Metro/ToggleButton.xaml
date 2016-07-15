@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="{x:Type ToggleButton}"
+           BasedOn="{StaticResource {x:Type ButtonBase}}"
+           TargetType="{x:Type ToggleButton}">
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush_Checked}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush_Checked}" />
+                <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundBrush_Checked}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

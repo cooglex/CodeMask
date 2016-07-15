@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cm="https://github.com/x-skywalker/codemask">
+
+    <Style x:Key="{x:Type ProgressBar}" TargetType="ProgressBar">
+        <Setter Property="Foreground" Value="{DynamicResource ProgressBarForegroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ProgressBarBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ProgressBarBorderBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid x:Name="Root">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Determinate" />
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="xTransform" Storyboard.TargetProperty="X">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="-75" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:04" Value="240" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="PART_Track"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" />
+                        <Grid x:Name="ProgressBarRootGrid">
+                            <Grid x:Name="IndeterminateRoot"
+                                  ClipToBounds="True"
+                                  Visibility="Collapsed">
+                                <Rectangle x:Name="IndeterminateSolidFill"
+                                           Width="50"
+                                           HorizontalAlignment="Left"
+                                           Fill="{TemplateBinding Foreground}">
+                                    <Rectangle.RenderTransform>
+                                        <TranslateTransform x:Name="xTransform" X="-50" />
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                            </Grid>
+                            <Grid x:Name="DeterminateRoot">
+                                <Border x:Name="PART_Indicator"
+                                        HorizontalAlignment="Left"
+                                        Background="{TemplateBinding Foreground}" />
+                            </Grid>
+                        </Grid>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter TargetName="Root" Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsIndeterminate" Value="true">
+                            <Setter TargetName="IndeterminateRoot" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="DeterminateRoot" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--
+        <Style x:Key="MetroProgressBarDefault_Style" TargetType="{x:Type ex:MetroProgressBar}">
+        <Setter Property="Foreground" Value="{StaticResource HotActiveBackground}" />
+        </Style>
+        <Style x:Key="ProgressRingDefault_Style" TargetType="{x:Type ex:ProgressRing}">
+        <Setter Property="Foreground" Value="{StaticResource HotActiveBackground}" />
+        </Style>
+    -->
+</ResourceDictionary>
