@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="ThemeTest.CalloutShapeDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cm="https://github.com/x-skywalker/codemask"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ThemeTest"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="800"
+             d:DesignWidth="600"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="SoftDarkUIBrush" StartPoint="0,0" EndPoint="0.5,1">
+            <GradientStop Color="#474E51" />
+            <GradientStop Offset="1" Color="#384043" />
+        </LinearGradientBrush>
+        <Style TargetType="cm:CalloutShape">
+            <Setter Property="ArrowHeight" Value="30" />
+            <Setter Property="ArrowWidth" Value="30" />
+            <Setter Property="Fill" Value="{DynamicResource SoftDarkUIBrush}" />
+            <Setter Property="StrokeThickness" Value="2" />
+            <Setter Property="Stroke" Value="Red" />
+            <Setter Property="StrokeDashArray" Value="4 2" />
+        </Style>
+    </UserControl.Resources>
+    <cm:AutoGrid ChildMargin="10"
+                 ColumnCount="1"
+                 ColumnWidth="*"
+                 RowCount="2"
+                 RowHeight="*">
+        <cm:AutoGrid ChildMargin="10"
+                     ColumnCount="2"
+                     ColumnWidth="*"
+                     RowCount="4"
+                     RowHeight="*">
+            <cm:CalloutShape ArrowAlignment="Left" ArrowPlacement="Top" />
+            <cm:CalloutShape ArrowAlignment="Right" ArrowPlacement="Top" />
+
+            <cm:CalloutShape ArrowAlignment="Left" ArrowPlacement="Bottom" />
+            <cm:CalloutShape ArrowAlignment="Right" ArrowPlacement="Bottom" />
+
+            <cm:CalloutShape ArrowAlignment="Up" ArrowPlacement="Left" />
+            <cm:CalloutShape ArrowAlignment="Down" ArrowPlacement="Left" />
+
+            <cm:CalloutShape ArrowAlignment="Up" ArrowPlacement="Right" />
+            <cm:CalloutShape ArrowAlignment="Down" ArrowPlacement="Right" />
+        </cm:AutoGrid>
+
+        <cm:AutoGrid ChildMargin="10"
+                     ColumnCount="2"
+                     ColumnWidth="*"
+                     RowCount="4"
+                     RowHeight="*">
+            <cm:CalloutShape ArrowAlignment="Left"
+                             ArrowPlacement="Top"
+                             ArrowStyle="IsoscelesTriangle" />
+            <cm:CalloutShape ArrowAlignment="Right"
+                             ArrowPlacement="Top"
+                             ArrowStyle="IsoscelesTriangle" />
+
+            <cm:CalloutShape ArrowAlignment="Left"
+                             ArrowPlacement="Bottom"
+                             ArrowStyle="IsoscelesTriangle" />
+            <cm:CalloutShape ArrowAlignment="Right"
+                             ArrowPlacement="Bottom"
+                             ArrowStyle="IsoscelesTriangle" />
+
+            <cm:CalloutShape ArrowAlignment="Up"
+                             ArrowPlacement="Left"
+                             ArrowStyle="IsoscelesTriangle" />
+            <cm:CalloutShape ArrowAlignment="Down"
+                             ArrowPlacement="Left"
+                             ArrowStyle="IsoscelesTriangle" />
+
+            <cm:CalloutShape ArrowAlignment="Up"
+                             ArrowPlacement="Right"
+                             ArrowStyle="IsoscelesTriangle" />
+            <cm:CalloutShape ArrowAlignment="Down"
+                             ArrowPlacement="Right"
+                             ArrowStyle="IsoscelesTriangle" />
+        </cm:AutoGrid>
+    </cm:AutoGrid>
+
+</UserControl>
