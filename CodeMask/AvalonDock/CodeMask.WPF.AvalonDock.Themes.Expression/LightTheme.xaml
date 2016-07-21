@@ -1,0 +1,33 @@
+﻿<!--
+    ***********************************************************************************
+    
+    AvalonDock
+    
+    
+    
+    
+ 
+    
+    
+    
+    
+    
+    
+    **********************************************************************************
+-->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:avalonDock="clr-namespace:CodeMask.WPF.AvalonDock;assembly=CodeMask.WPF.AvalonDock"
+                    xmlns:avalonDockControls="clr-namespace:CodeMask.WPF.AvalonDock.Controls;assembly=CodeMask.WPF.AvalonDock"
+                    xmlns:avalonDockConverters="clr-namespace:CodeMask.WPF.AvalonDock.Converters;assembly=CodeMask.WPF.AvalonDock"
+                    xmlns:avalonDockLayout="clr-namespace:CodeMask.WPF.AvalonDock.Layout;assembly=CodeMask.WPF.AvalonDock"
+                    xmlns:avalonDockProperties="clr-namespace:CodeMask.WPF.AvalonDock.Properties;assembly=CodeMask.WPF.AvalonDock"
+                    xmlns:localThemes="clr-namespace:CodeMask.WPF.AvalonDock.Themes"
+                    xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=CodeMask.WPF.AvalonDock">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="LightBrushes.xaml" />
+        <ResourceDictionary Source="Theme.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
