@@ -10,6 +10,7 @@ namespace CodeMask.WPF.Converters
     public class IsNullConverter : CoreConverter<IsNullConverter>, IValueConverter
     {
         #region IValueConverter Members
+
         /// <summary>
         ///     转换值。
         /// </summary>
@@ -34,7 +35,8 @@ namespace CodeMask.WPF.Converters
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
-        } 
+        }
+
         #endregion
     }
 }

@@ -7,143 +7,76 @@ using System.Windows.Markup;
 
 namespace CodeMask.WPF.Converters
 {
+#if !SILVERLIGHT
     /// <summary>
-    ///     An implementation of <see cref="IValueConverter" /> that converts the casing of the input string.
+    /// 大小写转换器。
     /// </summary>
-    /// <example>
-    ///     The following example shows how a <c>CaseConverter</c> can be used to convert a bound value to upper-case:
-    ///     <code lang="xml">
-    ///   <![CDATA[
-    ///   <Label Content="{Binding Name, Converter={CaseConverter Upper}}"/>
-    /// ]]>
-    ///   </code>
-    /// </example>
-    /// <example>
-    ///     The following example shows how a <c>CaseConverter</c> can be used to convert a bound value to upper-case, but
-    ///     display it in lower-case:
-    ///     <code lang="xml">
-    ///   <![CDATA[
-    ///   <Label Content="{Binding Name, Converter={CaseConverter SourceCasing=Upper, TargetCasing=Lower}}"/>
-    /// ]]>
-    ///   </code>
-    /// </example>
-    /// <remarks>
-    ///     The <c>CaseConverter</c> class can be used to convert input strings into upper or lower case according to the
-    ///     <see cref="Casing" /> property.
-    ///     Setting <see cref="Casing" /> is a shortcut for setting both <see cref="SourceCasing" /> and
-    ///     <see cref="TargetCasing" />. It is therefore possible
-    ///     to specify that the source and target properties be converted to different casings.
-    /// </remarks>
     [ValueConversion(typeof (string), typeof (string))]
+#endif
     public class CaseConverter : IValueConverter
     {
-        //private static readonly Lazy<T> instance = new Lazy<T>(true);
-        //public static T Instance
-        //{
-        //    get
-        //    {
-        //        return instance.Value;
-        //    }
-        //}
-        private static readonly Lazy<CaseConverter> instance = new Lazy<CaseConverter>(true);
-
         /// <summary>
-        ///     The source casing
-        /// </summary>
-        private CharacterCasing sourceCasing;
-
-        /// <summary>
-        ///     The target casing
-        /// </summary>
-        private CharacterCasing targetCasing;
-
-        /// <summary>
-        ///     Initializes a new instance of the CaseConverter class.
         /// </summary>
         public CaseConverter()
         {
         }
 
+
         /// <summary>
-        ///     Initializes a new instance of the CaseConverter class with the specified source and target casings.
         /// </summary>
-        /// <param name="casing">The source and target casings for the converter (see <see cref="Casing" />).</param>
+        /// <param name="casing"></param>
         public CaseConverter(CharacterCasing casing)
         {
             Casing = casing;
         }
 
+
         /// <summary>
-        ///     Initializes a new instance of the CaseConverter class with the specified source and target casings.
         /// </summary>
-        /// <param name="sourceCasing">The source casing for the converter (see <see cref="SourceCasing" />).</param>
-        /// <param name="targetCasing">The target casing for the converter (see <see cref="TargetCasing" />).</param>
+        /// <param name="sourceCasing"></param>
+        /// <param name="targetCasing"></param>
         public CaseConverter(CharacterCasing sourceCasing, CharacterCasing targetCasing)
         {
             SourceCasing = sourceCasing;
             TargetCasing = targetCasing;
         }
 
-        public static CaseConverter Instance
-        {
-            get { return instance.Value; }
-        }
-
         /// <summary>
-        ///     Gets or sets the source casing for the converter.
         /// </summary>
-        /// <value>The source casing.</value>
+#if !SILVERLIGHT
         [ConstructorArgument("sourceCasing")]
-        public CharacterCasing SourceCasing
-        {
-            get { return sourceCasing; }
-
-            set
-            {
-                //value.AssertEnumMember("value", CharacterCasing.Lower, CharacterCasing.Upper, CharacterCasing.Normal);
-                sourceCasing = value;
-            }
-        }
+#endif
+            public CharacterCasing SourceCasing { get; set; }
 
         /// <summary>
-        ///     Gets or sets the target casing for the converter.
         /// </summary>
-        /// <value>The target casing.</value>
+#if !SILVERLIGHT
         [ConstructorArgument("targetCasing")]
-        public CharacterCasing TargetCasing
-        {
-            get { return targetCasing; }
-
-            set
-            {
-                //value.AssertEnumMember("value", CharacterCasing.Lower, CharacterCasing.Upper, CharacterCasing.Normal);
-                targetCasing = value;
-            }
-        }
+#endif
+            public CharacterCasing TargetCasing { get; set; }
 
         /// <summary>
-        ///     Sets both the source and target casings for the converter.
         /// </summary>
-        /// <value>The casing.</value>
+#if !SILVERLIGHT
         [ConstructorArgument("casing")]
-        public CharacterCasing Casing
+#endif
+            public CharacterCasing Casing
         {
             set
             {
-                //value.AssertEnumMember("value", CharacterCasing.Lower, CharacterCasing.Upper, CharacterCasing.Normal);
-                sourceCasing = value;
-                targetCasing = value;
+                SourceCasing = value;
+                TargetCasing = value;
             }
         }
 
         /// <summary>
-        ///     Attempts to convert the specified value.
+        ///     转换值。
         /// </summary>
-        /// <param name="value">The value to convert.</param>
-        /// <param name="targetType">The type of the binding target property.</param>
-        /// <param name="parameter">The converter parameter to use.</param>
-        /// <param name="culture">The culture to use in the converter.</param>
-        /// <returns>A converted value.</returns>
+        /// <param name="value">绑定源生成的值。</param>
+        /// <param name="targetType">绑定目标属性的类型。</param>
+        /// <param name="parameter">要使用的转换器参数。</param>
+        /// <param name="culture">要用在转换器中的区域性。</param>
+        /// <returns>转换后的值。如果该方法返回 null，则使用有效的 null 值。</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var str = value as string;
@@ -167,13 +100,13 @@ namespace CodeMask.WPF.Converters
         }
 
         /// <summary>
-        ///     Attempts to convert the specified value back.
+        ///     转换值。
         /// </summary>
-        /// <param name="value">The value to convert.</param>
-        /// <param name="targetType">The type of the binding target property.</param>
-        /// <param name="parameter">The converter parameter to use.</param>
-        /// <param name="culture">The culture to use in the converter.</param>
-        /// <returns>A converted value.</returns>
+        /// <param name="value">绑定目标生成的值。</param>
+        /// <param name="targetType">要转换到的类型。</param>
+        /// <param name="parameter">要使用的转换器参数。</param>
+        /// <param name="culture">要用在转换器中的区域性。</param>
+        /// <returns>转换后的值。如果该方法返回 null，则使用有效的 null 值。</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var str = value as string;
