@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using CodeMask.WPF.Utils;
 
 namespace ThemeTest
 {
@@ -9,6 +10,7 @@ namespace ThemeTest
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            //BindingExceptionThrower.Attach();
             //XamlXmlReader xr = new XamlXmlReader("Brushes.xaml");
             //ResourceDictionary re = new ResourceDictionary();
             //re.Source = new Uri("pack://siteOfOrigin:,,,/LightBrushes.xaml", UriKind.RelativeOrAbsolute);

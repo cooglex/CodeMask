@@ -75,7 +75,9 @@
                                     <cm:LowerConverter x:Key="LowerConverter" />
                                     <cm:TrimConverter x:Key="TrimConverter" />
                                 </StackPanel.Resources>
-                                <TextBox x:Name="tb" Height="20" />
+                                <TextBox x:Name="tb"
+                                         Height="20"
+                                         Text="{Binding BadBinding}" />
                                 <TextBlock Text="{Binding ElementName=tb, Path=Text, Converter={cm:UpperConverter}}" />
                                 <TextBlock Text="{Binding ElementName=tb, Path=Text, Converter={StaticResource UpperConverter}}" />
                                 <TextBlock Text="{Binding ElementName=tb, Path=Text, Converter={cm:LowerConverter}}" />
