@@ -107,6 +107,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="RadialMenu\Styles\Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RadialMenu\Styles\PieShape.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RadialMenu\Styles\RadialMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RadialMenu\Styles\RadialMenuCentralItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RadialMenu\Styles\RadialMenuItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -161,6 +181,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RadialMenu\PieShape.cs" />
+    <Compile Include="RadialMenu\RadialMenu.cs" />
+    <Compile Include="RadialMenu\RadialMenuCentralItem.cs" />
+    <Compile Include="RadialMenu\RadialMenuItem.cs" />
+    <Compile Include="RadialMenu\RadialMenuItemToArrowPosition.cs" />
+    <Compile Include="RadialMenu\RadialMenuItemToContentPosition.cs" />
     <Compile Include="TreeListView.cs" />
     <Compile Include="Utils\CalloutShape.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

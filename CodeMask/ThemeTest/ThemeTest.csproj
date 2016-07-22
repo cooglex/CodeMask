@@ -68,6 +68,9 @@
     <Compile Include="DragDockPanelDemo.xaml.cs">
       <DependentUpon>DragDockPanelDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RadialMenuDemo.xaml.cs">
+      <DependentUpon>RadialMenuDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TreeListViewDemo.xaml.cs">
       <DependentUpon>TreeListViewDemo.xaml</DependentUpon>
     </Compile>
@@ -108,6 +111,10 @@
     <Page Include="ProgressDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RadialMenuDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TreeListViewDemo.xaml">
       <Generator>MSBuild:Compile</Generator>

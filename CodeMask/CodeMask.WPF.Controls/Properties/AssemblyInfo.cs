@@ -63,4 +63,4 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.Panels.DragDock")]
 [assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.Attached")]
 [assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.Utils")]
-//[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.Gif")]
+[assembly: XmlnsDefinition("https://github.com/x-skywalker/codemask", "CodeMask.WPF.Controls.RadialMenu")]

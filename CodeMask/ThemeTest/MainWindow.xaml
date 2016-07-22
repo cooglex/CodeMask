@@ -89,7 +89,7 @@
                                 <UniformGrid Rows="4">
                                     <UniformGrid.Resources>
                                         <Style TargetType="TextBox">
-                                            <Setter Property="Width" Value="100"></Setter>
+                                            <Setter Property="Width" Value="100" />
                                         </Style>
                                     </UniformGrid.Resources>
                                     <StackPanel Orientation="Horizontal">
@@ -102,7 +102,7 @@
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBox x:Name="tb_LU" Height="20" />
-                                        <TextBlock Text="{Binding ElementName=tb_LU, Path=Text,Mode=TwoWay, Converter={cm:CaseConverter SourceCasing=Lower, TargetCasing=Upper}}" />
+                                        <TextBlock Text="{Binding ElementName=tb_LU, Path=Text, Mode=TwoWay, Converter={cm:CaseConverter SourceCasing=Lower, TargetCasing=Upper}}" />
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBox x:Name="tb_UL" Height="20" />
@@ -489,6 +489,9 @@
                 </TabItem>
                 <TabItem Header="ListView">
                     <local:ListViewDemo />
+                </TabItem>
+                <TabItem Header="RadialMenu">
+                    <local:RadialMenuDemo />
                 </TabItem>
             </TabControl>
         </UniformGrid>
