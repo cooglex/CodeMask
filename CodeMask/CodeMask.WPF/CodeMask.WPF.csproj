@@ -78,7 +78,6 @@
     <Compile Include="Extensions\System.Windows.Window\Window.GetHandle.cs" />
     <Compile Include="Extensions\System.Windows.Window\Window.GetHwndSource.cs" />
     <Compile Include="Extensions\System.Windows.Window\Window.RegisterHook.cs" />
-    <Compile Include="MarkupExtensions\CaseConverterExtension.cs" />
     <Compile Include="MarkupExtensions\ImageBrushExtension.cs" />
     <Compile Include="MarkupExtensions\ImageSourceExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

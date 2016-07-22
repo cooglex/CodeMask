@@ -7,13 +7,11 @@ using System.Windows.Markup;
 
 namespace CodeMask.WPF.Converters
 {
-#if !SILVERLIGHT
     /// <summary>
-    /// 大小写转换器。
+    ///     大小写转换器。
     /// </summary>
     [ValueConversion(typeof (string), typeof (string))]
-#endif
-    public class CaseConverter : IValueConverter
+    public class CaseConverter : CoreConverter<CaseConverter>, IValueConverter
     {
         /// <summary>
         /// </summary>
@@ -43,24 +41,18 @@ namespace CodeMask.WPF.Converters
 
         /// <summary>
         /// </summary>
-#if !SILVERLIGHT
         [ConstructorArgument("sourceCasing")]
-#endif
-            public CharacterCasing SourceCasing { get; set; }
+        public CharacterCasing SourceCasing { get; set; }
 
         /// <summary>
         /// </summary>
-#if !SILVERLIGHT
         [ConstructorArgument("targetCasing")]
-#endif
-            public CharacterCasing TargetCasing { get; set; }
+        public CharacterCasing TargetCasing { get; set; }
 
         /// <summary>
         /// </summary>
-#if !SILVERLIGHT
         [ConstructorArgument("casing")]
-#endif
-            public CharacterCasing Casing
+        public CharacterCasing Casing
         {
             set
             {
@@ -127,6 +119,17 @@ namespace CodeMask.WPF.Converters
             }
 
             return DependencyProperty.UnsetValue;
+        }
+
+
+        /// <summary>
+        ///     返回默认的转换器对象。
+        /// </summary>
+        /// <param name="serviceProvider">服务提供者。</param>
+        /// <returns>转换器对象。</returns>
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return this;
         }
     }
 }
