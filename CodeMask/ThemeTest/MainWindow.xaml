@@ -493,6 +493,9 @@
                 <TabItem Header="RadialMenu">
                     <local:RadialMenuDemo />
                 </TabItem>
+                <TabItem Header="resourceBindingDemo">
+                    <local:resourceBindingDemo />
+                </TabItem>
             </TabControl>
         </UniformGrid>
 

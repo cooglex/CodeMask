@@ -71,6 +71,9 @@
     <Compile Include="RadialMenuDemo.xaml.cs">
       <DependentUpon>RadialMenuDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="resourceBindingDemo.xaml.cs">
+      <DependentUpon>resourceBindingDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TreeListViewDemo.xaml.cs">
       <DependentUpon>TreeListViewDemo.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="RadialMenuDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resourceBindingDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

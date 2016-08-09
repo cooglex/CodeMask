@@ -78,77 +78,80 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type cm:CustomChromeWindow}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="31" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <cm:MainWindowTitleBar x:Name="MainWindowTitleBar">
-                            <StackPanel Margin="2,2,0,0" Orientation="Horizontal">
-                                <Image Source="{TemplateBinding Icon}" />
-                                <TextBlock Grid.Row="0"
-                                           Grid.Column="1"
-                                           Margin="5,0,0,0"
-                                           VerticalAlignment="Center"
-                                           FontSize="16"
-                                           FontWeight="Bold"
-                                           Text="{TemplateBinding Title}" />
+                    <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="31" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <cm:MainWindowTitleBar x:Name="MainWindowTitleBar">
+                                <StackPanel Margin="2,2,0,0" Orientation="Horizontal">
+                                    <Image Source="{TemplateBinding Icon}" />
+                                    <TextBlock Grid.Row="0"
+                                               Grid.Column="1"
+                                               Margin="5,0,0,0"
+                                               VerticalAlignment="Center"
+                                               FontSize="16"
+                                               FontWeight="Bold"
+                                               Text="{TemplateBinding Title}" />
 
-                            </StackPanel>
-                        </cm:MainWindowTitleBar>
-
-                        <Border HorizontalAlignment="Right" VerticalAlignment="Top">
-                            <Border>
-                                <StackPanel Orientation="Horizontal">
-
-                                    <Button Command="{x:Static cm:CustomChromeWindow.MinimizeWindow}"
-                                            CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                            Style="{StaticResource WindowMinAndMaxButtonStyle}"
-                                            Tag="Min"
-                                            ToolTip="最小化">
-                                        <Path Name="MinimizeButtonPath"
-                                              Width="9"
-                                              Height="9"
-                                              Data="F1M0,6L0,9 9,9 9,6 0,6z"
-                                              Fill="{Binding Path=(TextElement.Foreground),
-                                                             RelativeSource={RelativeSource Self}}"
-                                              Stretch="None" />
-                                    </Button>
-
-                                    <Button x:Name="maxBtn"
-                                            Command="{x:Static cm:CustomChromeWindow.ToggleMaximizeRestoreWindow}"
-                                            CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                            Style="{StaticResource WindowMinAndMaxButtonStyle}"
-                                            Tag="Maximize"
-                                            ToolTip="最大化">
-                                        <Path Name="MaximizeRestoreButtonPath"
-                                              Width="9"
-                                              Height="9"
-                                              Data="F1M0,0L0,9 9,9 9,0 0,0 0,3 8,3 8,8 1,8 1,3z"
-                                              Fill="{Binding Path=(TextElement.Foreground),
-                                                             RelativeSource={RelativeSource Self}}"
-                                              Stretch="Uniform" />
-                                    </Button>
-
-                                    <Button x:Name="close"
-                                            Command="{x:Static cm:CustomChromeWindow.CloseWindow}"
-                                            CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                            Style="{StaticResource WindowCloseButtonStyle}"
-                                            Tag="Close"
-                                            ToolTip="关闭">
-                                        <Path Name="HideButtonPath"
-                                              Width="10"
-                                              Height="8"
-                                              Data="F1M0,0L2,0 5,3 8,0 10,0 6,4 10,8 8,8 5,5 2,8 0,8 4,4 0,0z"
-                                              Fill="{Binding Path=(TextElement.Foreground),
-                                                             RelativeSource={RelativeSource Self}}"
-                                              Stretch="Uniform" />
-                                    </Button>
                                 </StackPanel>
+                            </cm:MainWindowTitleBar>
+
+                            <Border HorizontalAlignment="Right" VerticalAlignment="Top">
+                                <Border>
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <Button Command="{x:Static cm:CustomChromeWindow.MinimizeWindow}"
+                                                CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                Style="{StaticResource WindowMinAndMaxButtonStyle}"
+                                                Tag="Min"
+                                                ToolTip="最小化">
+                                            <Path Name="MinimizeButtonPath"
+                                                  Width="9"
+                                                  Height="9"
+                                                  Data="F1M0,6L0,9 9,9 9,6 0,6z"
+                                                  Fill="{Binding Path=(TextElement.Foreground),
+                                                                 RelativeSource={RelativeSource Self}}"
+                                                  Stretch="None" />
+                                        </Button>
+
+                                        <Button x:Name="maxBtn"
+                                                Command="{x:Static cm:CustomChromeWindow.ToggleMaximizeRestoreWindow}"
+                                                CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                Style="{StaticResource WindowMinAndMaxButtonStyle}"
+                                                Tag="Maximize"
+                                                ToolTip="最大化">
+                                            <Path Name="MaximizeRestoreButtonPath"
+                                                  Width="9"
+                                                  Height="9"
+                                                  Data="F1M0,0L0,9 9,9 9,0 0,0 0,3 8,3 8,8 1,8 1,3z"
+                                                  Fill="{Binding Path=(TextElement.Foreground),
+                                                                 RelativeSource={RelativeSource Self}}"
+                                                  Stretch="Uniform" />
+                                        </Button>
+
+                                        <Button x:Name="close"
+                                                Command="{x:Static cm:CustomChromeWindow.CloseWindow}"
+                                                CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                Style="{StaticResource WindowCloseButtonStyle}"
+                                                Tag="Close"
+                                                ToolTip="关闭">
+                                            <Path Name="HideButtonPath"
+                                                  Width="10"
+                                                  Height="8"
+                                                  Data="F1M0,0L2,0 5,3 8,0 10,0 6,4 10,8 8,8 5,5 2,8 0,8 4,4 0,0z"
+                                                  Fill="{Binding Path=(TextElement.Foreground),
+                                                                 RelativeSource={RelativeSource Self}}"
+                                                  Stretch="Uniform" />
+                                        </Button>
+                                    </StackPanel>
+                                </Border>
                             </Border>
-                        </Border>
-                        <ContentPresenter Grid.Row="1" Margin="{TemplateBinding Padding}" />
-                    </Grid>
+                            <ContentPresenter Grid.Row="1" Margin="{TemplateBinding Padding}" />
+                        </Grid>
+
+                    </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="ResizeMode" Value="CanMinimize">
                             <Setter TargetName="maxBtn" Property="Visibility" Value="Collapsed" />

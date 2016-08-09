@@ -139,6 +139,7 @@
   <ItemGroup>
     <Compile Include="Animation\AnimatedHeaderedContentControl.cs" />
     <Compile Include="Animation\AnimationState.cs" />
+    <Compile Include="Attached\AttachContentControl.cs" />
     <Compile Include="Attached\AttachDataGridColumnHeader.cs" />
     <Compile Include="Attached\AttachGridViewColumnHeader.cs" />
     <Compile Include="Attached\AttachHelper.cs" />
